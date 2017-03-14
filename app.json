@@ -3,8 +3,7 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/talk/talk",
-    "pages/joke/index",
-    "pages/joke/img"
+    "pages/alg/index"
   ],
   "tabBar": {
     "color": "#000",
@@ -17,16 +16,10 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/joke/index",
-        "iconPath": "images/icons/article.png",
-        "selectedIconPath": "images/icons/article.png",
-        "text": "笑话"
-      },
-      {
-        "pagePath": "pages/joke/img",
-        "iconPath": "images/icons/image.png",
-        "selectedIconPath": "images/icons/image.png",
-        "text": "趣图"
+        "pagePath": "pages/alg/index",
+        "iconPath": "images/icons/maze.png",
+        "selectedIconPath": "images/icons/maze.png",
+        "text": "算法"
       }
     ]
   },

@@ -1,0 +1,10 @@
+<!--pages/joke/index.wxml-->
+<view>
+    <text class="title">Maze Path</text>
+    <view class="center" style="border:solid 1px;">
+    <canvas class="maze" style="margin-left:{{width}}" canvas-id="maze"></canvas>
+    </view>
+    <button bindtap="create" type="primary" style="width:90%;margin-top:5px;">生成迷宫</button>
+    <button bindtap="answer" type="primary" style="width:90%;margin-top:5px;">生成路径</button>
+</view>
+

@@ -4,7 +4,7 @@ var app = getApp()
 Page({
   data: {
     motto: '开始聊天',
-    helloword: '很高兴 能够为你带来些什么:p',
+    helloword: 'The greatest project you\'ll ever work on is you!',
     userInfo: {}
   },
   //事件处理函数

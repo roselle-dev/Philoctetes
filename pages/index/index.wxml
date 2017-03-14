@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <view class="container">
   <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    
+    <text class="userinfo-nickname">你好 {{userInfo.nickName}}</text>
   </view>
   <view class="helloword">
     <text class="helloword">{{helloword}}</text>
