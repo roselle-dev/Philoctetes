@@ -1,9 +1,15 @@
 <!--pages/joke/index.wxml-->
 <view>
+    <loading hidden="{{hidden}}">
+    绘制中...
+    </loading>
     <text class="title">Maze Path</text>
-    <view class="center" style="border:solid 1px;">
+    <view class="center">
     <canvas class="maze" style="margin-left:{{width}}" canvas-id="maze"></canvas>
     </view>
+    <text class="tips">迷宫大小：目前默认30*30</text>
+    <text class="tips">ps:运算量大，点击生成后需等待挺久...</text>
+    <text class="tips">pps:千万别多点!!!</text>
     <button bindtap="create" type="primary" style="width:90%;margin-top:5px;">生成迷宫</button>
     <button bindtap="answer" type="primary" style="width:90%;margin-top:5px;">生成路径</button>
 </view>
