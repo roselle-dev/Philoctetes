@@ -1,8 +1,8 @@
 // pages/joke/index.js
 Page({
   data: {
-    col: 5,
-    row: 5,
+    col: 32,
+    row: 32,
     maze: {},
     width: 50,
     height: 0,
@@ -131,7 +131,7 @@ Page({
     var random = Math.floor(Math.random() * 4);
     //next:当前节点
     var next = { x: path[path.length - 1].x, y: path[path.length - 1].y };
-    if (next.x == 3 && next.y == 3) {
+    if (next.x == 30 && next.y == 30) {
       this.setData({
         solvePath: path
       });
