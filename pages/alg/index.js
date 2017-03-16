@@ -1,13 +1,14 @@
 // pages/joke/index.js
 Page({
   data: {
-    col: 32,
-    row: 32,
+    col: 5,
+    row: 5,
     maze: {},
     width: 50,
     height: 0,
     path: {},
-    hidden: true
+    hidden: true,
+    solvePath: []
   },
   onLoad: function (options) {
     var that = this;
@@ -49,7 +50,6 @@ Page({
     maze[1][1].flag = 1;
     maze[col - 2][row - 2].right = 0;
     maze[col - 2][row - 2].flag = 0;
-    console.log(maze);
     that.setData({
       maze: maze
     });
@@ -99,6 +99,7 @@ Page({
     var col = this.data.col;
     var row = this.data.row;
     var maze = this.data.maze;
+    var solvePath = new Array();
     for (var i = 1; i < maze.length - 1; i++) {
       for (var j = 1; j < maze[i].length - 1; j++) {
         maze[i][j].draw = 0;
@@ -116,6 +117,8 @@ Page({
     var path = new Array();
     path.push({ x: 1, y: 1 });
     this.dug(path, maze);
+    console.log(maze);
+    console.log(this.data.solvePath);
     const ctx = wx.createCanvasContext('maze')
     ctx.clearRect(0, 0, 1500, 750);
     ctx.draw();
@@ -128,6 +131,11 @@ Page({
     var random = Math.floor(Math.random() * 4);
     //next:当前节点
     var next = { x: path[path.length - 1].x, y: path[path.length - 1].y };
+    if (next.x == 3 && next.y == 3) {
+      this.setData({
+        solvePath: path
+      });
+    }
     if (maze[next.x][next.y + 1].flag == 1 && maze[next.x][next.y - 1].flag == 1 && maze[next.x + 1][next.y].flag == 1 && maze[next.x - 1][next.y].flag == 1) {
       if (path.length > 1) {
         path.pop();
@@ -168,11 +176,30 @@ Page({
     }
   },
   answer: function () {
-    wx.showToast({
-      title: '还没做',
-      icon: 'loading',
-      duration: 2000
-    })
+    var solvePath = this.data.solvePath;
+    if (solvePath == null || solvePath == 0 || solvePath.length < 1) {
+      wx.showModal({
+        title: '提示',
+        content: '请先生成迷宫',
+        success: function (res) {
+
+        }
+      })
+    } else {
+      var context = wx.createContext();
+      for (var i = 0; i < solvePath.length; i++) {
+        console.log(solvePath[i]);
+        context.rect((solvePath[i].x - 1) * 10 + 4, (solvePath[i].y - 1) * 10 + 4, 3, 3);
+        context.setFillStyle('red')
+        context.fill();
+      }
+      console.log(context);
+      wx.drawCanvas({
+        canvasId: 'maze',
+        actions: context.getActions(),
+        reserve: true
+      })
+    }
   },
   onShow: function () {
     // 页面显示
