@@ -11,6 +11,9 @@ Page({
     solvePath: []
   },
   onLoad: function (options) {
+     wx.setNavigationBarTitle({
+      title: 'Maze Path'
+    })
     var that = this;
     var maze = new Array();
     var col = this.data.col;

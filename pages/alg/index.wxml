@@ -3,7 +3,6 @@
     <loading hidden="{{hidden}}">
     绘制中...
     </loading>
-    <text class="title">Maze Path</text>
     <view class="center">
     <canvas class="maze" style="margin-left:{{width}}" canvas-id="maze"></canvas>
     </view>
