@@ -1,5 +1,7 @@
 
 <!--pages/talk/talk.wxml-->
 <view class="container">
-  <text>还没做~</text>
+  <text>{{face}}</text>
+  <text style="margin-top:10px;">{{message}}</text>
+  <text style='margin-top:100px;'>倒计时</text>
 </view>
