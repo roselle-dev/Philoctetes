@@ -3,5 +3,5 @@
 <view class="container">
   <text>{{face}}</text>
   <text style="margin-top:10px;">{{message}}</text>
-  <text style='margin-top:100px;'>倒计时</text>
+  <text style='margin-top:100px;'>{{clock}}</text>
 </view>
