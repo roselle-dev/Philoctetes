@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/talk/talk",
-    "pages/alg/index"
+    "pages/alg/index",
+    "pages/sudoku/index"
   ],
   "tabBar": {
     "color": "#000",
@@ -19,7 +20,13 @@
         "pagePath": "pages/alg/index",
         "iconPath": "images/icons/maze.png",
         "selectedIconPath": "images/icons/maze.png",
-        "text": "算法"
+        "text": "迷宫"
+      },
+      {
+        "pagePath": "pages/sudoku/index",
+        "iconPath": "images/icons/sudoku.png",
+        "selectedIconPath": "images/icons/sudoku.png",
+        "text": "数独"
       }
     ]
   },

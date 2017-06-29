@@ -21,9 +21,9 @@ Page({
       clock: this.dateformat(total_micro_second)
     });
 
-    if (total_micro_second <= 0) {
+    if (total_micro_second <= 60*60*1000-10000) {
       that.setData({
-        face: '\(^o^)/',
+        face: '\\(^o^)/',
         message: '时间到！',
         clock: "00:00:00"
       });
@@ -79,14 +79,14 @@ Page({
         face: '_(:з」∠)_',
         message: '好吧 看在你这么诚心的份上'
       })
-    }, 110000)
+    }, 11000)
     var timeout5 = setTimeout(function () {
       that.setData({
-        face: '(థ౪థ)',
+        face: 'o(*≥▽≤)ツ┏━┓',
         message: '我看你能不能等这么久'
       })
-    }, 12000)
-    var timeout6 = setTimeout(this.countdown, 12000)
+    }, 13000)
+    var timeout6 = setTimeout(this.countdown, 13000)
   },
   onHide: function () {
     // 页面隐藏
