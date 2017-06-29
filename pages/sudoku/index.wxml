@@ -1,0 +1,102 @@
+<!--pages/sudoku/index.wxml-->
+<view class="center" style="margin-top:10px;">
+  <div>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+  </div>
+  <div>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+  </div>
+  <div>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+  </div>
+  <div>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+  </div>
+  <div>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+  </div>
+  <div>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+  </div>
+  <div>
+   <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+  </div>
+  <div>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+  </div>
+  <div>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" value=""/>
+  </div>
+</view>

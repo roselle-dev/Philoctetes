@@ -1,0 +1,23 @@
+/* pages/sudoku/index.wxss */
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box{
+  float: left;
+  width:20pt;
+  height: 20pt;
+  border: solid 1px black;
+  text-align: center;
+  background-color: white;
+}
+.box_g{
+  float: left;
+  width:20pt;
+  height: 20pt;
+  border: solid 1px black;
+  text-align: center;
+  background-color: lightgray;
+}
+
