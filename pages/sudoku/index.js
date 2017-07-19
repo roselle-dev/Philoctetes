@@ -64,5 +64,18 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  check:function(event){
+    var value = event.detail.value;
+    console.log(value);
+    if (value != 1 || value != 2 || value != 3 || value != 4 || value != 5 || value != 6 || value != 7 || value != 8 || value != 9){
+      wx.showToast({
+        title: '请输入1-9数字',
+        image: '../../images/icons/alarm.png',
+        duration: 2000
+      });
+      return "";
+    }
   }
 })

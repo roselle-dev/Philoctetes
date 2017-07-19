@@ -1,7 +1,7 @@
 <!--pages/sudoku/index.wxml-->
 <view class="center" style="margin-top:10px;">
   <div>
-    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" bindinput="check" value=""/>
     <input type="text" class="box_g" value=""/>
     <input type="text" class="box_g" value=""/>
     <input type="text" class="box" value=""/>
@@ -99,4 +99,5 @@
     <input type="text" class="box_g" value=""/>
     <input type="text" class="box_g" value=""/>
   </div>
+      <button bindtap="solve" type="primary" style="width:90%;margin-top:5px;">生成答案</button>
 </view>
