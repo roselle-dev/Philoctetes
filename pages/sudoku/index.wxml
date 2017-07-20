@@ -99,6 +99,18 @@
     <input type="text" class="box_g" id="79" bindinput="check" value="{{p[79]}}"/>
     <input type="text" class="box_g" id="80" bindinput="check" value="{{p[80]}}"/>
   </div>
-      <button bindtap="example" type="primary" style="width:90%;margin-top:10px;">生成案例</button>
-      <button bindtap="solve" type="primary" style="width:90%;margin-top:10px;">生成答案</button>
+      <button bindtap="example" type="primary" style="width:80%;margin-top:10px;">案例</button>
+      <button bindtap="solve" type="primary" style="width:80%;margin-top:10px;">答案</button>
+      <div style="width:80%;margin-top:10px;text-align:left;font-size: 12px;">
+      温馨提示：
+      </div>
+      <div style="width:80%;margin-top:10px;text-align:left;font-size: 12px;">
+      1.它能帮你计算数独的答案,但是根据难度，时间是好几倍增长的。
+      </div>
+      <div style="width:80%;margin-top:10px;text-align:left;font-size: 12px;">
+      2.部分崩溃情况有处理，but有更多的情况存在!
+      </div>
+      <div style="width:80%;margin-top:10px;text-align:left;font-size: 12px;">
+      3.好好玩一般没事儿滴，不好好玩儿 哼哼 就等着变暖宝宝吧
+      </div>
 </view>

@@ -210,6 +210,12 @@ Page({
           image: '../../images/icons/alarm.png',
           duration: 2000
         });
+        for(var i=0;i<problem.length;i++){
+          problem[i]="";
+        }
+        that.setData({
+          p: problem
+        })
         break;
       }
     }

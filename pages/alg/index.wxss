@@ -9,7 +9,7 @@
 
 .maze {
   width: 300px;
-  height: 320px;
+  height: 3200px;
   background: #fff;
 }
 
