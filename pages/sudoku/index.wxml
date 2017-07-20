@@ -99,5 +99,6 @@
     <input type="text" class="box_g" id="79" bindinput="check" value="{{p[79]}}"/>
     <input type="text" class="box_g" id="80" bindinput="check" value="{{p[80]}}"/>
   </div>
+      <button bindtap="example" type="primary" style="width:90%;margin-top:10px;">生成案例</button>
       <button bindtap="solve" type="primary" style="width:90%;margin-top:10px;">生成答案</button>
 </view>
