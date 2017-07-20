@@ -1,103 +1,103 @@
 <!--pages/sudoku/index.wxml-->
 <view class="center" style="margin-top:10px;">
   <div>
-    <input type="text" class="box_g" bindinput="check" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[0]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[1]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[2]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[3]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[4]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[5]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[6]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[7]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[8]}}"/>
   </div>
   <div>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[9]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[10]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[11]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[12]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[13]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[14]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[15]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[16]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[17]}}"/>
   </div>
   <div>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[18]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[19]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[20]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[21]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[22]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[23]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[24]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[25]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[26]}}"/>
   </div>
   <div>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
+    <input type="text" class="box" bindinput="check" value="{{p[27]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[28]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[29]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[30]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[31]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[32]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[33]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[34]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[35]}}"/>
   </div>
   <div>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
+    <input type="text" class="box" bindinput="check" value="{{p[36]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[37]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[38]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[39]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[40]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[41]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[42]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[43]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[44]}}"/>
   </div>
   <div>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
+    <input type="text" class="box" bindinput="check" value="{{p[45]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[46]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[47]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[48]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[49]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[50]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[51]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[52]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[53]}}"/>
   </div>
   <div>
-   <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
+   <input type="text" class="box_g" bindinput="check" value="{{p[54]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[55]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[56]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[57]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[58]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[59]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[60]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[61]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[62]}}"/>
   </div>
   <div>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[63]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[64]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[65]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[66]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[67]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[68]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[69]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[70]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[71]}}"/>
   </div>
   <div>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
-    <input type="text" class="box_g" value=""/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[72]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[73]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[74]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[75]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[76]}}"/>
+    <input type="text" class="box" bindinput="check" value="{{p[77]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[78]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[79]}}"/>
+    <input type="text" class="box_g" bindinput="check" value="{{p[80]}}"/>
   </div>
       <button bindtap="solve" type="primary" style="width:90%;margin-top:5px;">生成答案</button>
 </view>
