@@ -65,10 +65,15 @@ Page({
   onShareAppMessage: function () {
 
   },
-
+  /**
+   * 输入检查
+   */
   check: function (event) {
+    var that = this;
+    var problem = this.data.p;
     var value = event.detail.value;
-    console.log(value);
+    var id = event.currentTarget.id;
+    problem[Number(id)] = value;
     if (value != '1' && value != '2' && value != '3' && value != '4' && value != '5' && value != '6' && value != '7' && value != '8' && value != '9') {
       wx.showToast({
         title: '请输入1-9数字',
@@ -76,6 +81,19 @@ Page({
         duration: 2000
       });
       return "";
+    }else{
+      that.setData({
+        p: problem
+      })
+      return value;
     }
+  },
+  /**
+   * 生成答案
+   */
+  solve:function(){
+    var that = this;
+    var problem = that.data.p;
+    console.log(problem);
   }
 })
