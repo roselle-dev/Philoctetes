@@ -81,7 +81,7 @@ Page({
         duration: 2000
       });
       return "";
-    }else{
+    } else {
       that.setData({
         p: problem
       })
@@ -91,9 +91,48 @@ Page({
   /**
    * 生成答案
    */
-  solve:function(){
+  solve: function () {
     var that = this;
     var problem = that.data.p;
     console.log(problem);
+    console.log(head);
+    console.log(this.init(problem));
+  },
+
+  init: function (p) {
+    if (p.length != 81) {
+      return false;
+    } else {
+      var k = 0;
+      for (var i = 1; i < 10; i++) {
+        for (var j = 1; j < 10; j++) {
+          map[i][j] = p[k++];
+        }
+      }
+      return true;
+    }
   }
+
 })
+
+var maxr = 9 * 9 * 9 + 10;
+var maxc = 9 * 9 * 4 + 10;
+var L = new Array(maxc + maxr * 5);
+var R = new Array(maxc + maxr * 5);
+var U = new Array(maxc + maxr * 5);
+var D = new Array(maxc + maxr * 5);
+var S = new Array(maxc);
+var nRow = new Array(maxc + maxr * 5);
+var nCol = new Array(maxc + maxr * 5);
+var head = new Array(10);
+for (var i = 0; i < 10; i++) {
+  head[i] = new Array(10);
+  for (var j = 0; j < 10; j++) {
+    head[i][j] = new Array(10);
+  }
+}
+var cnt;
+var map = new Array(10);
+for (var i = 0; i < 10; i++) {
+  map[i] = new Array(10);
+}
