@@ -1,11 +1,12 @@
 <!--pages/joke/index.wxml-->
-<view>
+<view class="center">
     <loading hidden="{{hidden}}">
     绘制中...
     </loading>
     <text class="tips">迷宫大小：目前默认30*30</text>
     <text class="tips">ps:运算量大，点击生成后需等待挺久...</text>
     <text class="tips">pps:千万别多点!!!</text>
+    <input style="width:90%;margin-top:5px;border:solid 1px #CCCCCC;" placeholder="请输入迷宫尺寸"/>
     <button bindtap="create" type="primary" style="width:90%;margin-top:5px;">生成迷宫</button>
     <button bindtap="answer" type="primary" style="width:90%;margin-top:5px;">生成路径</button>
     <view class="center" style="margin-top:10px;">

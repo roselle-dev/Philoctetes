@@ -1,14 +1,15 @@
+var gcol = 32;
+var grow = 32;
+var gmaze = {};
+var gpath = {};
+var gsolvePath = new Array();
+
 // pages/joke/index.js
 Page({
   data: {
-    col: 32,
-    row: 32,
-    maze: {},
     width: 50,
     height: 0,
-    path: {},
-    hidden: true,
-    solvePath: []
+    hidden: true
   },
   onLoad: function (options) {
      wx.setNavigationBarTitle({
@@ -16,8 +17,8 @@ Page({
     })
     var that = this;
     var maze = new Array();
-    var col = this.data.col;
-    var row = this.data.row;
+    var col = gcol;
+    var row = grow;
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
@@ -53,12 +54,10 @@ Page({
     maze[1][1].flag = 1;
     maze[col - 2][row - 2].right = 0;
     maze[col - 2][row - 2].flag = 0;
-    that.setData({
-      maze: maze
-    });
+    gmaze=maze;
   },
   drawMaze: function () {
-    var maze = this.data.maze;
+    var maze = gmaze;
     var context = wx.createContext();
     for (var i = 1; i < maze.length - 1; i++) {
       for (var j = 1; j < maze[i].length - 1; j++) {
@@ -99,9 +98,9 @@ Page({
   },
   create: function () {
     var that = this;
-    var col = this.data.col;
-    var row = this.data.row;
-    var maze = this.data.maze;
+    var col = gcol;
+    var row = grow;
+    var maze = gmaze;
     var solvePath = new Array();
     for (var i = 1; i < maze.length - 1; i++) {
       for (var j = 1; j < maze[i].length - 1; j++) {
@@ -120,24 +119,24 @@ Page({
     var path = new Array();
     path.push({ x: 1, y: 1 });
     this.dug(path, maze);
-    console.log(maze);
-    console.log(this.data.solvePath);
     const ctx = wx.createCanvasContext('maze')
     ctx.clearRect(0, 0, 1500, 750);
     ctx.draw();
-    that.setData({
-      maze: maze
-    });
+    gmaze=maze
   },
   //挖墙的核心方法
   dug: function (path, maze) {
+    console.log("dug!");
+    console.log(path);
+    var that = this;
+    var size = gcol;
     var random = Math.floor(Math.random() * 4);
     //next:当前节点
     var next = { x: path[path.length - 1].x, y: path[path.length - 1].y };
-    if (next.x == 30 && next.y == 30) {
-      this.setData({
-        solvePath: path
-      });
+    if (next.x == (size-2) && next.y == (size-2)) {
+      console.log("x:"+next.x+"-y:"+next.y+"-size:"+size);
+      console.log(path);
+      gsolvePath = path.slice();
     }
     if (maze[next.x][next.y + 1].flag == 1 && maze[next.x][next.y - 1].flag == 1 && maze[next.x + 1][next.y].flag == 1 && maze[next.x - 1][next.y].flag == 1) {
       if (path.length > 1) {
@@ -179,7 +178,7 @@ Page({
     }
   },
   answer: function () {
-    var solvePath = this.data.solvePath;
+    var solvePath = gsolvePath;
     if (solvePath == null || solvePath == 0 || solvePath.length < 1) {
       wx.showModal({
         title: '提示',
@@ -191,12 +190,10 @@ Page({
     } else {
       var context = wx.createContext();
       for (var i = 0; i < solvePath.length; i++) {
-        console.log(solvePath[i]);
         context.rect((solvePath[i].x - 1) * 10 + 4, (solvePath[i].y - 1) * 10 + 4, 3, 3);
         context.setFillStyle('red')
         context.fill();
       }
-      console.log(context);
       wx.drawCanvas({
         canvasId: 'maze',
         actions: context.getActions(),
