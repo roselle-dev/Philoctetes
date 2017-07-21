@@ -20,7 +20,7 @@
   margin-top: 150px;
 }
 
-.helloword {
+.content {
   margin-top: 20px;
   font-size: 12px;
 }

@@ -4,7 +4,7 @@ var app = getApp()
 Page({
   data: {
     motto: '开始聊天',
-    helloword: 'The greatest project you\'ll ever work on is you!',
+    content: 'The greatest project you\'ll ever work on is you!',
     userInfo: {}
   },
   //事件处理函数
@@ -38,7 +38,7 @@ Page({
     contents[9] = "Nothing seek,nothing find.";
     var random = Math.floor(Math.random() * 10);
     that.setData({
-      helloword: contents[random]
+      content: contents[random]
     })
   },
   buyTicket: function () {
