@@ -100,7 +100,35 @@ Page({
     var that = this;
     var col = gcol;
     var row = grow;
-    var maze = gmaze;
+    var maze = new Array();
+
+    for (var i = 0; i < col; i++) {
+      maze[i] = new Array();
+      for (var k = 0; k < row; k++) {
+        maze[i][k] = {
+          flag: 0,
+          draw: 1,
+          left: 1,
+          right: 1,
+          top: 1,
+          bottom: 1
+        }
+      }
+    }
+    //边界设墙
+    for (var i = 0; i < col; i++) {
+      maze[i][0].flag = 1;
+      maze[i][row - 1].flag = 1;
+    }
+    for (var j = 0; j < row; j++) {
+      maze[0][j].flag = 1;
+      maze[col - 1][j].flag = 1;
+    }
+    maze[1][1].left = 0;
+    maze[1][1].flag = 1;
+    maze[col - 2][row - 2].right = 0;
+    maze[col - 2][row - 2].flag = 0;
+    gmaze = maze;
     var solvePath = new Array();
     for (var i = 1; i < maze.length - 1; i++) {
       for (var j = 1; j < maze[i].length - 1; j++) {
@@ -209,5 +237,36 @@ Page({
   },
   onUnload: function () {
     // 页面关闭
+  },
+  setSize:function(event){
+    var value = event.detail.value;
+    if(isNaN(value)){
+      wx.showToast({
+        title: '请输入数字,OK?',
+        image: '../../images/icons/alarm.png',
+        duration: 2000
+      });
+      return "";
+    }else{
+      var size = parseInt(value);
+      if(size<=0){
+        wx.showToast({
+          title: '你想搞事情？！',
+          image: '../../images/icons/alarm.png',
+          duration: 2000
+        });
+        return "";
+      }else if(size>40){
+        wx.showToast({
+          title: '安全起见，不准那么大~',
+          image: '../../images/icons/alarm.png',
+          duration: 2000
+        });
+        return "";
+      }else{
+        gcol = size+2;
+        grow = size+2;
+      }
+    }
   }
 })
