@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/talk/talk",
     "pages/alg/index",
-    "pages/sudoku/index"
+    "pages/sudoku/index",
+    "pages/about/index"
   ],
   "tabBar": {
     "color": "#000",
@@ -27,6 +28,12 @@
         "iconPath": "images/icons/sudoku.png",
         "selectedIconPath": "images/icons/sudoku.png",
         "text": "数独"
+      },
+      {
+        "pagePath": "pages/about/index",
+        "iconPath": "images/icons/about.png",
+        "selectedIconPath": "images/icons/about.png",
+        "text": "关于"
       }
     ]
   },
