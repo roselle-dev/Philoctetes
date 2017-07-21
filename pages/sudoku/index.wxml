@@ -101,6 +101,7 @@
   </div>
       <button bindtap="example" type="primary" style="width:80%;margin-top:10px;">案例</button>
       <button bindtap="solve" type="primary" style="width:80%;margin-top:10px;">答案</button>
+      <button bindtap="clear" type="primary" style="width:80%;margin-top:10px;">清空</button>
       <div style="width:80%;margin-top:10px;text-align:left;font-size: 12px;">
       温馨提示：
       </div>
@@ -115,5 +116,8 @@
       </div>
       <div style="width:80%;margin-top:10px;text-align:left;font-size: 12px;">
       4.所用的算法为Dancing Links，主要解决精确覆盖问题
+      </div>
+      <div style="width:80%;margin-top:10px;text-align:left;font-size: 12px;">
+      5.案例总共20个，随机出现的
       </div>
 </view>
