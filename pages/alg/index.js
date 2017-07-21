@@ -243,7 +243,7 @@ Page({
     if(isNaN(value)){
       wx.showToast({
         title: '请输入数字,OK?',
-        image: '../../images/icons/alarm.png',
+        image: '../../images/icons/ym.png',
         duration: 2000
       });
       return "";
@@ -252,14 +252,14 @@ Page({
       if(size<=0){
         wx.showToast({
           title: '你想搞事情？！',
-          image: '../../images/icons/alarm.png',
+          image: '../../images/icons/angry.png',
           duration: 2000
         });
         return "";
       }else if(size>40){
         wx.showToast({
           title: '安全起见，不准那么大~',
-          image: '../../images/icons/alarm.png',
+          image: '../../images/icons/smile.png',
           duration: 2000
         });
         return "";

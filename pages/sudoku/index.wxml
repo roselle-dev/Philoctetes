@@ -113,4 +113,7 @@
       <div style="width:80%;margin-top:10px;text-align:left;font-size: 12px;">
       3.好好玩一般没事儿滴，不好好玩儿 哼哼 就等着变暖宝宝吧
       </div>
+      <div style="width:80%;margin-top:10px;text-align:left;font-size: 12px;">
+      4.所用的算法为Dancing Links，主要解决精确覆盖问题
+      </div>
 </view>
