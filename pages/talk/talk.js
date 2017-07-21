@@ -23,8 +23,8 @@ Page({
 
     if (total_micro_second <= 60*60*1000-10000) {
       that.setData({
-        face: '\\(^o^)/',
-        message: '时间到！',
+        face: '╮(╯▽╰)╭',
+        message: '算你厉害！然而 真的没做.....',
         clock: "00:00:00"
       });
       // timeout则跳出递归

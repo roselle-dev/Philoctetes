@@ -24,3 +24,9 @@
   margin-top: 20px;
   font-size: 12px;
 }
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
