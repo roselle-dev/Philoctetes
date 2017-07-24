@@ -9,9 +9,11 @@ Page({
   },
   //事件处理函数
   bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    wx.showToast({
+      title: '萨瓦迪卡',
+      image: '../../images/icons/smile.png',
+      duration: 2000
+    });
   },
   onLoad: function () {
     wx.setNavigationBarTitle({

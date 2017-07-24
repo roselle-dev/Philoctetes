@@ -24,7 +24,7 @@ Page({
     if (total_micro_second <= 60*60*1000-10000) {
       that.setData({
         face: '╮(╯▽╰)╭',
-        message: '算你厉害！然而 真的没做.....',
+        message: '算你厉害！蛋酥 就是不跟你聊~',
         clock: "00:00:00"
       });
       // timeout则跳出递归
