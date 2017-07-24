@@ -1,1 +1,8 @@
-{}
+{
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Maze",
+    "navigationBarTextStyle": "black"
+  }
+}

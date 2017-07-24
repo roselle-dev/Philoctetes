@@ -1,1 +1,8 @@
-{}
+{
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "数独",
+    "navigationBarTextStyle": "black"
+  }
+}
