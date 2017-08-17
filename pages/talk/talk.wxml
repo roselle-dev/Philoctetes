@@ -1,7 +1,10 @@
 
 <!--pages/talk/talk.wxml-->
-<view class="container">
+<view wx:if="{{!talkflag}}" class="container">
   <text>{{face}}</text>
   <text style="margin-top:10px;">{{message}}</text>
   <text style='margin-top:100px;'>{{clock}}</text>
+</view>
+<view wx:if="{{talkflag}}" class="container">
+  <text style="margin-top:10px;">真正的聊天</text>
 </view>

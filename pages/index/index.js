@@ -3,7 +3,7 @@
 var app = getApp()
 Page({
   data: {
-    motto: '开始聊天',
+    motto: '建立连接',
     content: 'The greatest project you\'ll ever work on is you!',
     userInfo: {}
   },
@@ -23,6 +23,7 @@ Page({
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function (userInfo) {
       //更新数据
+      console.log(userInfo);
       that.setData({
         userInfo: userInfo
       })

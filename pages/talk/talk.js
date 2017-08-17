@@ -1,10 +1,12 @@
 // pages/talk/talk.js
+var app = getApp()
 Page({
   data: {
     face: '(=･ω･=)',
     message: '还没做~',
     clock: '',
-    total_micro_second: 60*60 * 1000
+    total_micro_second: 60*60 * 1000,
+    talkflag:false
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
@@ -25,8 +27,17 @@ Page({
       that.setData({
         face: '╮(╯▽╰)╭',
         message: '算你厉害！蛋酥 就是不跟你聊~',
-        clock: "00:00:00"
+        clock: "00:00:00",
+        talkflag:true
       });
+      //将用户名称存入缓存，下次如果一致则不再显示倒计时
+      app.getUserInfo(function (userInfo) {
+        wx.setStorage({
+          key: "user",
+          data: userInfo.nickName
+        })
+      })
+      
       // timeout则跳出递归
       return;
     }
@@ -56,6 +67,16 @@ Page({
   },
   onShow: function () {
     var that = this;
+    var loginName = "";
+    app.getUserInfo(function (userInfo) {
+      loginName=userInfo.nickName;
+    })
+    var storageName = wx.getStorageSync('user');
+    console.log("loginname:"+loginName);
+    console.log("sname"+storageName);
+    if(storageName!=null&&storageName==loginName){
+      console.log("第二次登陆");
+    }
     var timeout1 = setTimeout(function () {
       that.setData({
         face: '╮(╯▽╰)╭',
