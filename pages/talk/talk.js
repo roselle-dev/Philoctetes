@@ -5,10 +5,21 @@ Page({
     face: '(=･ω･=)',
     message: '还没做~',
     clock: '',
-    total_micro_second: 60*60 * 1000,
-    talkflag:false
+    total_micro_second: 60 * 60 * 1000,
+    talkflag: false,
+    screenWidth: 375,
+    screenHeight: 667
   },
   onLoad: function (options) {
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          screenWidth: res.windowWidth,
+          screenHeight: res.windowHeight
+        });
+      }
+    })
     // 页面初始化 options为页面跳转所带来的参数
   },
   onReady: function () {
@@ -23,12 +34,12 @@ Page({
       clock: this.dateformat(total_micro_second)
     });
 
-    if (total_micro_second <= 60*60*1000-10000) {
+    if (total_micro_second <= 60 * 60 * 1000 - 1000) {
       that.setData({
         face: '╮(╯▽╰)╭',
         message: '算你厉害！蛋酥 就是不跟你聊~',
         clock: "00:00:00",
-        talkflag:true
+        talkflag: true
       });
       //将用户名称存入缓存，下次如果一致则不再显示倒计时
       app.getUserInfo(function (userInfo) {
@@ -37,14 +48,14 @@ Page({
           data: userInfo.nickName
         })
       })
-      
+
       // timeout则跳出递归
       return;
     }
     setTimeout(function () {
       // 放在最后--
       that.setData({
-        total_micro_second: total_micro_second-10
+        total_micro_second: total_micro_second - 10
       });
       that.countdown();
     }
@@ -68,46 +79,55 @@ Page({
   onShow: function () {
     var that = this;
     var loginName = "";
+    var timeflag = true;
     app.getUserInfo(function (userInfo) {
-      loginName=userInfo.nickName;
+      loginName = userInfo.nickName;
     })
     var storageName = wx.getStorageSync('user');
-    console.log("loginname:"+loginName);
-    console.log("sname"+storageName);
-    if(storageName!=null&&storageName==loginName){
+    console.log("loginname:" + loginName);
+    console.log("sname" + storageName);
+    if (storageName != null && storageName == loginName) {
       console.log("第二次登陆");
+      timeflag = false;
+      that.setData({
+        talkflag: true
+      });
     }
-    var timeout1 = setTimeout(function () {
-      that.setData({
-        face: '╮(╯▽╰)╭',
-        message: '真的没做啦'
-      })
-    }, 2000)
-    var timeout2 = setTimeout(function () {
-      that.setData({
-        face: '(╯-_-)╯~╩╩',
-        message: '这么说你是不信咯'
-      })
-    }, 5000)
-    var timeout3 = setTimeout(function () {
-      that.setData({
-        face: '(*ﾟДﾟ*) ',
-        message: '还不点后退？！'
-      })
-    }, 8000)
-    var timeout4 = setTimeout(function () {
-      that.setData({
-        face: '_(:з」∠)_',
-        message: '好吧 看在你这么诚心的份上'
-      })
-    }, 11000)
-    var timeout5 = setTimeout(function () {
-      that.setData({
-        face: 'o(*≥▽≤)ツ┏━┓',
-        message: '我看你能不能等这么久'
-      })
-    }, 13000)
-    var timeout6 = setTimeout(this.countdown, 13000)
+    if (timeflag) {
+      var timeout1 = setTimeout(function () {
+        that.setData({
+          face: '╮(╯▽╰)╭',
+          message: '真的没做啦'
+        })
+      }, 2000)
+      var timeout2 = setTimeout(function () {
+        that.setData({
+          face: '(╯-_-)╯~╩╩',
+          message: '这么说你是不信咯'
+        })
+      }, 5000)
+      var timeout3 = setTimeout(function () {
+        that.setData({
+          face: '(*ﾟДﾟ*) ',
+          message: '还不点后退？！'
+        })
+      }, 8000)
+      var timeout4 = setTimeout(function () {
+        that.setData({
+          face: '_(:з」∠)_',
+          message: '好吧 看在你这么诚心的份上'
+        })
+      }, 11000)
+      var timeout5 = setTimeout(function () {
+        that.setData({
+          face: 'o(*≥▽≤)ツ┏━┓',
+          message: '我看你能不能等这么久'
+        })
+      }, 13000)
+      var timeout6 = setTimeout(this.countdown, 13000)
+    } else {
+      //进入真正聊天画面
+    }
   },
   onHide: function () {
     // 页面隐藏
