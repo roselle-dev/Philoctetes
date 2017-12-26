@@ -1,14 +1,19 @@
 // pages/talk/talk.js
-var app = getApp()
+var app = getApp();
+var msgList = [{
+  type:1, //1:机器人回复,0:用户输入
+  content:"> 连接成功"
+},{
+  type:1,
+  content:"我中了神奇的诅咒 每天总共只能讲300句话 否则就会换个意识..."
+}];
 Page({
   data: {
     face: '(=･ω･=)',
     message: '还没做~',
     clock: '',
     total_micro_second: 60 * 60 * 1000,
-    talkflag: false,
-    screenWidth: 375,
-    screenHeight: 667
+    talkflag: false
   },
   onLoad: function (options) {
     var that = this;
@@ -24,6 +29,9 @@ Page({
   },
   onReady: function () {
     // 页面渲染完成
+  },
+  showContent: function () {
+    
   },
   /* 毫秒级倒计时 */
   countdown: function () {
@@ -76,6 +84,7 @@ Page({
     var micro_sec = Math.floor((micro_second % 1000) / 10);
     return hr + " : " + min + " : " + sec + "." + micro_sec;
   },
+  
   onShow: function () {
     var that = this;
     var loginName = "";

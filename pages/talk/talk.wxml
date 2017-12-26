@@ -4,10 +4,7 @@
   <text style="margin-top:10px;">{{message}}</text>
   <text style='margin-top:100px;'>{{clock}}</text>
 </view>
-<scroll-view scroll-y wx:if="{{talkflag}}" style="height:{{screenHeight}}px;">
-  <div style="height:{{screenHeight-26}}px;border:solid 1px red;width:100%;">content</div>
-  <div style="width:100%;display:flex;bottom:1px;position:absolute;bottom:1px;">
-    <input type="text" placeholder="这里是输入框" style="width:80%;border-bottom:solid 1px #DDD;text-align:center;height:26px;" />
-    <span style="width:20%;line-height:26px;border:solid 1px green;text-align:center;height:26px;">发送</span>
-  </div>
+<scroll-view scroll-y wx:if="{{talkflag}}" style="height:{{screenHeight}}px;background:#000;color:green;">
+
+  <div id="rob1" style="color:green;">12313</div>
 </scroll-view>
