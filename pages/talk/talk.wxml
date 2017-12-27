@@ -4,8 +4,14 @@
   <text style="margin-top:10px;">{{message}}</text>
   <text style='margin-top:100px;'>{{clock}}</text>
 </view>
-<scroll-view scroll-y wx:if="{{talkflag}}" style="height:{{screenHeight}}px;background:#000;color:green;">
+<scroll-view scroll-into-view="{{toView}}" scroll-y wx:if="{{talkflag}}" style="height:{{screenHeight}}px;background:#000;color:#28FF28;">
     <view wx:for="{{msgList}}">
-      <view style="padding-left:10px;width:100%;">{{item.content}}</view>
+      <view style="padding:0 10px;">{{item.content}}</view>
+    </view>
+    <view id="black" class='blank'>
+    </view>
+    <view class='typeview'>
+      <input class='typein' bindinput="bindKeyInput" focus='true' ></input>
+      <view class='sendbtn' bindtap='send' >发送</view>
     </view>
 </scroll-view>
