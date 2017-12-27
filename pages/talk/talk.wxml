@@ -5,6 +5,7 @@
   <text style='margin-top:100px;'>{{clock}}</text>
 </view>
 <scroll-view scroll-y wx:if="{{talkflag}}" style="height:{{screenHeight}}px;background:#000;color:green;">
-
-  <div id="rob1" style="color:green;">12313</div>
+    <view wx:for="{{msgList}}">
+      <view style="padding-left:10px;width:100%;">{{item.content}}</view>
+    </view>
 </scroll-view>

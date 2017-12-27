@@ -1,19 +1,26 @@
 // pages/talk/talk.js
 var app = getApp();
-var msgList = [{
-  type:1, //1:机器人回复,0:用户输入
-  content:"> 连接成功"
-},{
-  type:1,
-  content:"我中了神奇的诅咒 每天总共只能讲300句话 否则就会换个意识..."
-}];
+var allmsg = {
+  index:0,
+  msgs: [{
+    type: 1, //1:机器人回复,0:用户输入
+    content: "> 连接成功",
+    printlength:0
+  }, {
+    type: 1,
+    content: "我有个BUG 每天总共只能讲300句话......",
+    printlength: 0
+  }]
+};
 Page({
   data: {
     face: '(=･ω･=)',
     message: '还没做~',
     clock: '',
     total_micro_second: 60 * 60 * 1000,
-    talkflag: false
+    talkflag: false,
+    msgList:[],
+    printMsg:""
   },
   onLoad: function (options) {
     var that = this;
@@ -28,10 +35,28 @@ Page({
     // 页面初始化 options为页面跳转所带来的参数
   },
   onReady: function () {
+    var that = this;
     // 页面渲染完成
-  },
-  showContent: function () {
-    
+    var i = setInterval(()=>{
+      if (allmsg.index<allmsg.msgs.length){//有新的内容需要显示
+        var templist = this.data.msgList;
+        if (allmsg.msgs[allmsg.index].printlength==0){//新的一句
+          allmsg.msgs[allmsg.index].printlength+=1;
+          templist[templist.length]={
+            content: allmsg.msgs[allmsg.index].content.substring(0, allmsg.msgs[allmsg.index].printlength)
+          }
+        }else{//某一句打印中
+          allmsg.msgs[allmsg.index].printlength += 1;
+          templist[templist.length - 1].content = allmsg.msgs[allmsg.index].content.substring(0, allmsg.msgs[allmsg.index].printlength);
+        }
+        that.setData({
+          msgList: templist
+        });
+        if (allmsg.msgs[allmsg.index].printlength == allmsg.msgs[allmsg.index].content.length){//一句打印完了
+          allmsg.index++;
+        }
+      }
+    },200);
   },
   /* 毫秒级倒计时 */
   countdown: function () {
