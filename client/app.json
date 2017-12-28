@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/addCgi/addCgi",
+    "pages/demo/index",
     "pages/logs/logs",
     "pages/talk/talk",
     "pages/alg/index",
