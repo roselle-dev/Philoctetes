@@ -2,6 +2,7 @@
 var app = getApp();
 var inputmsg = '';
 var intId = null;
+var key = "8fe6002b37dc569bde5c9dea3851cd8d";
 var allmsg = {
   index: 0,
   msgs: [{

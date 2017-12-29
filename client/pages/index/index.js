@@ -1,4 +1,7 @@
 //index.js
+var qcloud = require('../../vendor/wafer2-client-sdk/index')
+var config = require('../../config')
+var util = require('../../utils/util.js')
 //获取应用实例
 var app = getApp()
 Page({
@@ -45,10 +48,19 @@ Page({
     })
   },
   buyTicket: function () {
-    var that = this;
-    console.log(this.data.userInfo.nickName + '点击按钮，开始聊天');
     wx.navigateTo({
-      url: '../talk/talk',
+      url: '../talk/talk'
+    })
+  },
+  opentest:function(){
+    wx.request({
+      url: config.service.host+"/weapp/hello",
+      success:function(result){
+        console.log(result);
+      }
+    })
+    wx.navigateTo({
+      url: '../demo/index'
     })
   }
 })

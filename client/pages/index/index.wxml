@@ -5,7 +5,7 @@
     <text class="userinfo-nickname">你好 {{userInfo.nickName}}</text>
   </view>
   <view class="content center">
-    <text class="content">{{content}}</text>
+    <text bindtap="opentest" class="content">{{content}}</text>
   </view>
   <view class="usermotto">
     <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
