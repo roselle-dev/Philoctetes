@@ -153,7 +153,7 @@ Page({
       clock: this.dateformat(total_micro_second)
     });
 
-    if (total_micro_second <= 60 * 60 * 1000 - 1000) {
+    if (total_micro_second <= 60 * 60 * 1000 - 10000) {
       that.setData({
         face: '╮(╯▽╰)╭',
         message: '算你厉害！蛋酥 就是不跟你聊~',
