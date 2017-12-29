@@ -53,14 +53,14 @@ Page({
     })
   },
   opentest:function(){
-    wx.request({
-      url: config.service.host+"/weapp/hello",
-      success:function(result){
-        console.log(result);
-      }
-    })
-    wx.navigateTo({
-      url: '../demo/index'
-    })
+    // wx.request({
+    //   url: config.service.host+"/weapp/hello",
+    //   success:function(result){
+    //     console.log(result);
+    //   }
+    // })
+    // wx.navigateTo({
+    //   url: '../demo/index'
+    // })
   }
 })
