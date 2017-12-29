@@ -6,7 +6,7 @@ var util = require('../../utils/util.js')
 var app = getApp()
 Page({
   data: {
-    motto: '建立连接',
+    motto: '解解闷',
     content: 'The greatest project you\'ll ever work on is you!',
     userInfo: {}
   },
