@@ -2,7 +2,7 @@
 var app = getApp();
 var inputmsg = '';
 var intId = null;
-var key = "8fe6002b37dc569bde5c9dea3851cd8d";
+var Rkey = "8fe6002b37dc569bde5c9dea3851cd8d";
 var allmsg = {
   index: 0,
   msgs: [{
@@ -11,12 +11,13 @@ var allmsg = {
     printlength: 0
   }, {
     type: 1,
-    content: "> 你好 我童年时不小心吃了毒苹果 每天总共只能讲300句话 后面的就听不到啦...",
+    content: "> 你好 我童年时不小心吃了毒苹果 我只能听到30字以内的话 每天总共只能讲100句话 后面的就听不到啦...",
     printlength: 0
   }]
 };
 Page({
   data: {
+    inputString: '',
     toView: 'black',
     face: '(=･ω･=)',
     message: '还没做~',
@@ -28,47 +29,65 @@ Page({
     inputValue: ""
   },
   getAnswer: function () {
-    var answer = "啊啊啊 你说什么呀？？？";
-    allmsg.msgs[allmsg.msgs.length] = {
-      type: 1,
-      content: "> " + answer,
-      printlength: 0
-    }
+    var userinfo = null;
+    var answer = "啊啊啊 你说什么呀？？？没听清呢";
+    app.getUserInfo(function (info) {
+      userinfo = info;
+    })
+    //发接口获得回复
+    wx.request({
+      url: 'https://op.juhe.cn/robot/index',
+      data: {
+        key: Rkey,
+        info: inputmsg,
+        userid: userinfo.nickName + userinfo.province
+      },
+      success: function (res) {
+        console.log(res.data);
+        answer = res.data.result.text;
+        allmsg.msgs[allmsg.msgs.length] = {
+          type: 1,
+          content: "> " + answer,
+          printlength: 0
+        }
+      }
+    })
   },
   send: function () {
     var that = this;
+    that.setData({
+      inputString: ''
+    })
     allmsg.msgs[allmsg.msgs.length] = {
-      type: 0,
+      type: 0, 
       content: "< " + inputmsg,
       printlength: 0
     }
     this.getAnswer();
-    intId = setInterval(() => {
-      console.log("执行intervel");
-      console.log(allmsg);
-      console.log(this.data.msgList);
-      if (allmsg.index < allmsg.msgs.length) {//有新的内容需要显示
-        var templist = this.data.msgList;
-        if (allmsg.msgs[allmsg.index].printlength == 0) {//新的一句
-          allmsg.msgs[allmsg.index].printlength += 1;
-          templist[templist.length] = {
-            content: allmsg.msgs[allmsg.index].content.substring(0, allmsg.msgs[allmsg.index].printlength)
-          }
-        } else {//某一句打印中
-          allmsg.msgs[allmsg.index].printlength += 1;
-          templist[templist.length - 1].content = allmsg.msgs[allmsg.index].content.substring(0, allmsg.msgs[allmsg.index].printlength);
-        }
-        that.setData({
-          msgList: templist,
-          toView: 'black'
-        });
-        if (allmsg.msgs[allmsg.index].printlength == allmsg.msgs[allmsg.index].content.length) {//一句打印完了
-          allmsg.index++;
-        }
-      } else {//全部完成
-        clearInterval(intId);
-      }
-    }, 100);
+    // intId = setInterval(() => {
+    //   if (allmsg.index < allmsg.msgs.length) {//有新的内容需要显示
+    //     var templist = this.data.msgList;
+    //     if (allmsg.msgs[allmsg.index].printlength == 0) {//新的一句
+    //       console.log("有新的句子需要显示");
+    //       allmsg.msgs[allmsg.index].printlength += 1;
+    //       templist[templist.length] = {
+    //         content: allmsg.msgs[allmsg.index].content.substring(0, allmsg.msgs[allmsg.index].printlength)
+    //       }
+    //     } else {//某一句打印中
+    //       allmsg.msgs[allmsg.index].printlength += 1;
+    //       templist[templist.length - 1].content = allmsg.msgs[allmsg.index].content.substring(0, allmsg.msgs[allmsg.index].printlength);
+    //     }
+    //     that.setData({
+    //       msgList: templist,
+    //       toView: 'black'
+    //     });
+    //     if (allmsg.msgs[allmsg.index].printlength == allmsg.msgs[allmsg.index].content.length) {//一句打印完了
+    //       allmsg.index++;
+    //     }
+    //   } else {//全部完成
+    //     clearInterval(intId);
+    //   }
+    // }, 100);
   },
   onLoad: function (options) {
     var that = this;
@@ -97,14 +116,11 @@ Page({
         printlength: 0
       }, {
         type: 1,
-        content: "> 你好 我童年时不小心吃了毒苹果 每天总共只能讲300句话 后面的就听不到啦...",
+        content: "> 你好 我童年时不小心吃了毒苹果 我只能听到30字以内的话 每天总共只能讲100句话 后面的就听不到啦...",
         printlength: 0
       }]
     };
     intId = setInterval(() => {
-      console.log("执行intervel");
-      console.log(allmsg);
-      console.log(this.data.msgList);
       if (allmsg.index < allmsg.msgs.length) {//有新的内容需要显示
         var templist = this.data.msgList;
         if (allmsg.msgs[allmsg.index].printlength == 0) {//新的一句
@@ -124,7 +140,7 @@ Page({
           allmsg.index++;
         }
       } else {//全部完成
-        clearInterval(intId);
+        // clearInterval(intId);
       }
     }, 100);
   },

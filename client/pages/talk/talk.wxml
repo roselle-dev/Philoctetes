@@ -11,7 +11,7 @@
     <view id="black" class='blank'>
     </view>
     <view class='typeview'>
-      <input class='typein' bindinput="bindKeyInput"></input>
+      <input class='typein' bindinput="bindKeyInput" value='{{inputString}}'></input>
       <view class='sendbtn' bindtap='send' >发送</view>
     </view>
 </scroll-view>
