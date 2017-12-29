@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/alone/index",
     "pages/index/index",
     "pages/addCgi/addCgi",
     "pages/demo/index",
@@ -8,6 +9,7 @@
     "pages/alg/index",
     "pages/sudoku/index",
     "pages/about/index"
+    
   ],
   "tabBar": {
     "color": "#000",
@@ -23,19 +25,19 @@
         "pagePath": "pages/alg/index",
         "iconPath": "images/icons/maze.png",
         "selectedIconPath": "images/icons/maze.png",
-        "text": "迷宫"
+        "text": "算法"
       },
       {
         "pagePath": "pages/sudoku/index",
-        "iconPath": "images/icons/sudoku.png",
-        "selectedIconPath": "images/icons/sudoku.png",
-        "text": "数独"
+        "iconPath": "images/icons/party.png",
+        "selectedIconPath": "images/icons/party.png",
+        "text": "互动"
       },
       {
         "pagePath": "pages/about/index",
         "iconPath": "images/icons/about.png",
         "selectedIconPath": "images/icons/about.png",
-        "text": "关于"
+        "text": "信息"
       }
     ]
   },

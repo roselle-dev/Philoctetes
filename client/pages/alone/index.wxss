@@ -1,0 +1,23 @@
+/* pages/alone/index.wxss */
+.oneItem{
+  border: solid 1px #CCC;
+  height:80px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 2px 2px 10px #999;
+  background: #EEE;
+  display: flex;
+}
+.logo{
+  background: #F9F900;
+  width: 80px;
+  height:80px;
+}
+.item_title{
+  /* border: solid 1px; */
+  width: 60%;
+  margin-left: 20px;
+}
