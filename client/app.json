@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/alone/index",
     "pages/index/index",
     "pages/addCgi/addCgi",
     "pages/demo/index",
     "pages/logs/logs",
     "pages/talk/talk",
     "pages/alg/index",
+    "pages/alone/index",
     "pages/sudoku/index",
     "pages/about/index"
     
@@ -17,18 +17,18 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/icons/home.png",
-        "selectedIconPath": "images/icons/home.png",
+        "iconPath": "images/icons/index.png",
+        "selectedIconPath": "images/icons/index.png",
         "text": "首页"
       },
       {
-        "pagePath": "pages/alg/index",
-        "iconPath": "images/icons/maze.png",
-        "selectedIconPath": "images/icons/maze.png",
+        "pagePath": "pages/alone/index",
+        "iconPath": "images/icons/code3.png",
+        "selectedIconPath": "images/icons/code3.png",
         "text": "算法"
       },
       {
-        "pagePath": "pages/sudoku/index",
+        "pagePath": "pages/alone/index",
         "iconPath": "images/icons/party.png",
         "selectedIconPath": "images/icons/party.png",
         "text": "互动"

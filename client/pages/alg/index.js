@@ -4,7 +4,6 @@ var gmaze = {};
 var gpath = {};
 var gsolvePath = new Array();
 
-// pages/joke/index.js
 Page({
   data: {
     width: 50,
