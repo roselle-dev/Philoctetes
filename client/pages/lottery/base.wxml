@@ -1,0 +1,25 @@
+<!--pages/lottery/base.wxml-->
+<view class='main'>
+  <text>pages/lottery/base.wxml</text>
+  <view class='row'>
+    <view class='numwindow'>
+      <view class='oneNumber' style='margin-top: {{margin6}}px;'>{{number6}}</view>
+    </view>
+    <view class='numwindow'>
+      <view class='oneNumber' style='margin-top: {{margin5}}px;'>{{number5}}</view>
+    </view>
+    <view class='numwindow'>
+      <view class='oneNumber' style='margin-top: {{margin4}}px;'>{{number4}}</view>
+    </view>
+    <view class='numwindow'>
+      <view class='oneNumber' style='margin-top: {{margin3}}px;'>{{number3}}</view>
+    </view>
+    <view class='numwindow'>
+      <view class='oneNumber' style='margin-top: {{margin2}}px;'>{{number2}}</view>
+    </view>
+    <view class='numwindow'>
+      <view class='oneNumber' style='margin-top: {{margin1}}px;'>{{number1}}</view>
+    </view>
+  </view>
+  <button bindtap='doIt'>抽奖</button>
+</view>
