@@ -1,4 +1,4 @@
-/* pages/alone/index.wxss */
+/* pages/party/party.wxss */
 .oneItem{
   border: solid 1px #CCC;
   height:80px;

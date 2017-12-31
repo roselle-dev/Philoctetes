@@ -7,6 +7,7 @@
     "pages/talk/talk",
     "pages/alg/index",
     "pages/alone/index",
+    "pages/party/party",
     "pages/sudoku/index",
     "pages/about/index"
     
@@ -28,7 +29,7 @@
         "text": "算法"
       },
       {
-        "pagePath": "pages/alone/index",
+        "pagePath": "pages/party/party",
         "iconPath": "images/icons/party.png",
         "selectedIconPath": "images/icons/party.png",
         "text": "互动"

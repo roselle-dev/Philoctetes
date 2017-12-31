@@ -6,7 +6,7 @@
     </view>
     <view class='item_title'>
       <view style='font-size:16px;'>迷宫</view>
-      <view style='font-size:12px;color:#999;'>一个可以生成N*N迷宫的小工具 并且能够给出答案 每次生成都是不同的内容</view>
+      <view style='font-size:12px;color:#999;margin-top:5px;'>一个可以生成N*N迷宫的小工具 并且能够给出答案 每次生成都是不同的内容</view>
     </view>
   </view>
   <view id="sudoku" bindtap='toSudoku' class="oneItem">
@@ -15,7 +15,7 @@
     </view>
     <view class='item_title'>
       <view style='font-size:16px;'>数独</view>
-      <view style='font-size:12px;color:#999;'>一个能够快速解答数独的小工具 并且给出了20个案例</view>
+      <view style='font-size:12px;color:#999;margin-top:5px;'>一个能够快速解答数独的小工具 并且给出了20个案例</view>
     </view>
   </view>
 
