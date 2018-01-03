@@ -27,4 +27,17 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 10px 0;
+}
+.radio{
+  width: 80%;
+  color: #999;
+  text-align: center;
+}
+.numberinput{
+  text-align: center;
+  border: solid 1px #999;
+}
+.oneRadio{
+  padding: 8px;
 }
