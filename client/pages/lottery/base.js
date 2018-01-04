@@ -6,8 +6,10 @@ Page({
    */
   data: {
     primarySize: 'default',
-    disabled:false,
-    resultNum:5,
+    disabled: false,
+    resultNum: 1,
+    start: 0,
+    end: 999999,
     numbers1: [{
       number: "0123456789",
       margin: 0
@@ -112,6 +114,60 @@ Page({
       number1: number1 + oneTurn + oneTurn,
       margin1: -180 + (-450)
     })
+  },
+  radioChange: function (e) {
+    var that = this;
+    that.setData({
+      resultNum: e.detail.value
+    })
+  },
+  startNum: function (e) {
+    var that = this;
+    var startNum = e.detail.value;
+    var flag = isNaN(startNum);
+    if (flag) { //输入并不是数字
+      wx.showToast({
+        title: '请输入数字',
+        image: '../../images/icons/alarm.png',
+        duration: 2000
+      });
+      return this.data.start;
+    } else if (startNum % 1 != 0) {
+      wx.showToast({
+        title: '抽奖哪来小数点！',
+        image: '../../images/icons/angry.png',
+        duration: 2000
+      });
+      return this.data.start;
+    } else {
+      that.setData({
+        start: startNum
+      })
+    }
+  },
+  endNum: function (e) {
+    var that = this;
+    var endNum = e.detail.value;
+    var flag = isNaN(endNum);
+    if (flag) { //输入并不是数字
+      wx.showToast({
+        title: '请输入数字',
+        image: '../../images/icons/alarm.png',
+        duration: 2000
+      });
+      return this.data.end;
+    } else if (endNum % 1 != 0) {
+      wx.showToast({
+        title: '抽奖哪来小数点！',
+        image: '../../images/icons/angry.png',
+        duration: 2000
+      });
+      return this.data.end;
+    } else {
+      that.setData({
+        end: endNum
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载

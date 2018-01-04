@@ -2,9 +2,9 @@
 <view class='main'>
 <view class='radio'>
 请选择抽奖的数字范围：
-<input type='number' maxlength='6' placeholder="开始数字" bindinput="startNum" class='numberinput' value='000000'></input>
+<input type='number' maxlength='6' placeholder="开始数字" bindinput="startNum" class='numberinput' value='{{start}}'></input>
 <view style='text-align:center;'>到</view>
-<input type='number' maxlength='6' placeholder="结束数字" bindinput="endNum" class='numberinput' value='999999'></input>
+<input type='number' maxlength='6' placeholder="结束数字" bindinput="endNum" class='numberinput' value='{{end}}'></input>
 </view>
 <view class='radio'>
 <view style='text-align:center;'>一次产生几个结果:</view>
