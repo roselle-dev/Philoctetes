@@ -1,4 +1,5 @@
 <view class="center">
+  <text class="tips">作者：洛</text>
   <text class="tips">版本号 V1.0.0</text>
   <text class="tips">————————————————————</text>
   <text class="tips">我的邮箱（欢迎提需求）</text>
