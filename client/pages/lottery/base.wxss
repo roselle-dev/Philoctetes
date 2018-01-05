@@ -39,5 +39,5 @@
   border: solid 1px #999;
 }
 .oneRadio{
-  padding: 8px;
+  padding: 4px;
 }
