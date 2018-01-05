@@ -8,7 +8,11 @@ Page({
     toView: 'base',
     scrollTop: 10
   },
-
+  toBase: function () {
+    wx.navigateTo({
+      url: '../lottery/base'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

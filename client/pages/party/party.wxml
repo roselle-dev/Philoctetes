@@ -1,6 +1,6 @@
 <!--pages/party/party.wxml-->
 <scroll-view scroll-y scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-  <view id="base" bindtap='' class="oneItem" style='margin-top:10px;'>
+  <view id="base" bindtap='toBase' class="oneItem" style='margin-top:10px;'>
     <view class='logo'>
       <image style="width: 80px; height: 80px;background:#FFF;" src="../../images/icons/777.png"></image>
     </view>
