@@ -22,7 +22,7 @@ Page({
     return {
       title: '一个有内涵的小程序',
       path: '/pages/index/index',
-      imageUrl:'/images/icons/html.png',
+      imageUrl:'/images/pic/P.png',
       success: function (res) {
         // 转发成功
       },

@@ -282,7 +282,7 @@ Page({
     return {
       title: '给别人开个奖吧',
       path: 'pages/lottery/base',
-      imageUrl: '/images/icons/777.png',
+      imageUrl: '/images/pic/P.png',
       success: function (res) {
         // 转发成功
       },
