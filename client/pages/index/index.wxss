@@ -23,6 +23,9 @@
 .content {
   margin-top: 20px;
   font-size: 12px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
 }
 
 .center {

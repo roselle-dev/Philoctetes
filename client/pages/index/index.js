@@ -22,7 +22,7 @@ Page({
     return {
       title: '一个有内涵的小程序',
       path: '/pages/index/index',
-      imageUrl:'/images/pic/P.png',
+      imageUrl: '/images/pic/P.png',
       success: function (res) {
         // 转发成功
       },
@@ -44,32 +44,56 @@ Page({
         userInfo: userInfo
       })
     })
-    var contents = new Array();
-    contents[0] = "Fading is true while flowering is past";
-    contents[1] = "The greatest project you\'ll ever work on is you!";
-    contents[2] = "Eternity is not a distance but a decision";
-    contents[3] = "When love is not madness, it is not love";
-    contents[4] = "While there is life there is hope.";
-    contents[5] = "Nothing for nothing.";
-    contents[6] = "Do what you say,say what you do ";
-    contents[7] = "All things come to those who wait.";
-    contents[8] = "Never,never,never,never give up";
-    contents[9] = "Nothing seek,nothing find.";
-    var random = Math.floor(Math.random() * 10);
-    that.setData({
-      content: contents[random]
+    wx.request({
+      url: config.service.host + "/weapp/everyday",
+      success: function (result) {
+        var list = result.data.data;
+        console.log(list);
+        if (list.length > 0) {
+          var sentence = list[0].text;
+          that.setData({
+            content: sentence
+          })
+        }
+      },
+      fail: function (err) {
+        that.setData({
+          content: "Nothing seek,nothing find."
+        })
+      }
     })
+    // var contents = new Array();
+    // contents[0] = "Fading is true while flowering is past";
+    // contents[1] = "The greatest project you\'ll ever work on is you!";
+    // contents[2] = "Eternity is not a distance but a decision";
+    // contents[3] = "When love is not madness, it is not love";
+    // contents[4] = "While there is life there is hope.";
+    // contents[5] = "Nothing for nothing.";
+    // contents[6] = "Do what you say,say what you do ";
+    // contents[7] = "All things come to those who wait.";
+    // contents[8] = "Never,never,never,never give up";
+    // contents[9] = "Nothing seek,nothing find.";
+    // var random = Math.floor(Math.random() * 10);
+    // that.setData({
+    //   content: contents[random]
+    // })
   },
   buyTicket: function () {
     wx.navigateTo({
       url: '../talk/talk'
     })
   },
-  opentest:function(){
+  opentest: function () {
+    // var that = this;
     // wx.request({
-    //   url: config.service.host+"/weapp/hello",
+    //   url: config.service.host+"/weapp/everyday",
     //   success:function(result){
     //     console.log(result);
+    //   },
+    //   fail:function(err){
+    //     that.setData({
+    //       content: "Nothing seek,nothing find."
+    //     })
     //   }
     // })
     // wx.navigateTo({
