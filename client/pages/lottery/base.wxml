@@ -1,0 +1,55 @@
+<!--pages/lottery/base.wxml-->
+<view class='main'>
+<view class='radio'>
+请选择抽奖的数字范围：
+<input type='number' maxlength='6' placeholder="开始数字" bindinput="startNum" class='numberinput' value='{{start}}'></input>
+<view style='text-align:center;'>到</view>
+<input type='number' maxlength='6' placeholder="结束数字" bindinput="endNum" class='numberinput' value='{{end}}'></input>
+</view>
+<view class='radio'>
+<view style='text-align:center;'>一次产生几个结果:</view>
+  <radio-group bindchange="radioChange">
+  <label class='oneRadio'>
+    <radio value="1" checked="true"/>1
+  </label>
+  <label class='oneRadio'>
+    <radio value="2" />2
+  </label>
+  <label class='oneRadio'>
+    <radio value="3" />3
+  </label>
+  <label class='oneRadio'>
+    <radio value="4" />4
+  </label>
+  <label class='oneRadio'>
+    <radio value="5" />5
+  </label>
+</radio-group>
+</view>
+<button style='width:80%;margin-top:10px;' type="primary" size="{{primarySize}}" disabled="{{disabled}}" bindtap="doIt"> 抽奖 </button>
+  <view wx:if='{{resultNum>=1}}' class='row'>
+    <view wx:for="{{numbers1}}" class='numwindow'>
+      <view class='oneNumber' style='margin-top: {{item.margin}}px;'>{{item.number}}</view>
+    </view>
+  </view>
+  <view wx:if='{{resultNum>=2}}' class='row'>
+    <view wx:for="{{numbers2}}" class='numwindow'>
+      <view class='oneNumber' style='margin-top: {{item.margin}}px;'>{{item.number}}</view>
+    </view>
+  </view>
+  <view wx:if='{{resultNum>=3}}' class='row'>
+    <view wx:for="{{numbers3}}" class='numwindow'>
+      <view class='oneNumber' style='margin-top: {{item.margin}}px;'>{{item.number}}</view>
+    </view>
+  </view>
+  <view wx:if='{{resultNum>=4}}' class='row'>
+    <view wx:for="{{numbers4}}" class='numwindow'>
+      <view class='oneNumber' style='margin-top: {{item.margin}}px;'>{{item.number}}</view>
+    </view>
+  </view>
+  <view wx:if='{{resultNum>=5}}' class='row'>
+    <view wx:for="{{numbers5}}" class='numwindow'>
+      <view class='oneNumber' style='margin-top: {{item.margin}}px;'>{{item.number}}</view>
+    </view>
+  </view>
+</view>

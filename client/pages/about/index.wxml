@@ -1,6 +1,10 @@
 <view class="center">
-<text class="tips">我的邮箱（欢迎提需求）</text>
-<text class="tips">chensjpro@163.com</text>
+  <text class="tips">作者：洛</text>
+  <text class="tips">版本号 V1.0.0</text>
+  <text class="tips">————————————————————</text>
+  <text class="tips">我的邮箱（欢迎提需求）</text>
+  <text class="tips">chensjpro@163.com</text>
+  <text class="tips">————————————————————</text>
   <text class="tips">我的公众号</text>
   <image bindtap="previewImage" style="width: 300px; height: 300px; background-color: #eeeeee;" src="{{gzh}}"></image>
   <text class="tips">欢迎打赏（1分也是爱~）</text>

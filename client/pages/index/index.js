@@ -18,6 +18,19 @@ Page({
       duration: 2000
     });
   },
+  onShareAppMessage: function (res) {
+    return {
+      title: '一个有内涵的小程序',
+      path: '/pages/index/index',
+      imageUrl:'/images/pic/P.png',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  },
   onLoad: function () {
     wx.setNavigationBarTitle({
       title: '首页'

@@ -1,0 +1,43 @@
+/* pages/lottery/base.wxss */
+
+.oneNumber {
+  width: 40px;
+  line-height: 45px;
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 40px;
+  transition: all 2s ease-in-out;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.numwindow {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  background: #000;
+  color: #FFD700;
+  border: solid 1px #FFF;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 0;
+}
+.radio{
+  width: 80%;
+  color: #999;
+  text-align: center;
+}
+.numberinput{
+  text-align: center;
+  border: solid 1px #999;
+}
+.oneRadio{
+  padding: 4px;
+}
