@@ -1,0 +1,4 @@
+<!--pages/cube/cube.wxml-->
+<view class='tabs'>
+  <text>pages/cube/cube.wxml</text>
+</view>

@@ -153,16 +153,12 @@ Page({
   },
   //挖墙的核心方法
   dug: function (path, maze) {
-    console.log("dug!");
-    console.log(path);
     var that = this;
     var size = gcol;
     var random = Math.floor(Math.random() * 4);
     //next:当前节点
     var next = { x: path[path.length - 1].x, y: path[path.length - 1].y };
     if (next.x == (size-2) && next.y == (size-2)) {
-      console.log("x:"+next.x+"-y:"+next.y+"-size:"+size);
-      console.log(path);
       gsolvePath = path.slice();
     }
     if (maze[next.x][next.y + 1].flag == 1 && maze[next.x][next.y - 1].flag == 1 && maze[next.x + 1][next.y].flag == 1 && maze[next.x - 1][next.y].flag == 1) {

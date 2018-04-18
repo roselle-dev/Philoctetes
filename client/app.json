@@ -10,7 +10,8 @@
     "pages/lottery/base",
     "pages/party/party",
     "pages/sudoku/index",
-    "pages/about/index"
+    "pages/about/index",
+    "pages/cube/cube"
     
   ],
   "tabBar": {

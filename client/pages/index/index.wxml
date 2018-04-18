@@ -8,7 +8,10 @@
     <text bindtap="opentest" class="content">{{content}}</text>
   </view>
   <view class="usermotto">
-    <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+    <button size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="buyTicket">{{motto}}</button>
+  </view>
+  <view class='usermotto'>
+  <button type="primary" size="{{primarySize}}" loading="{{loading}}" bindtap="magicCube">我要学三阶魔方</button>
   </view>
 </view>
