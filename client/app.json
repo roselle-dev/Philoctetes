@@ -15,7 +15,8 @@
     
   ],
   "tabBar": {
-    "color": "#000",
+    "backgroundColor":"#000",
+    "color": "#FFF",
     "selectedColor": "#09BB07",
     "list": [
       {
@@ -46,8 +47,8 @@
   },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "Philoctetes",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   }
 }
