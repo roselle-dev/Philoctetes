@@ -45,4 +45,16 @@ page{
 }
 .buttons{
   border-top: solid 1px #CCC;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 5px;
+}
+.buttonleft{
+  width:374rpx;
+  text-align:center;
+  border-right: solid 1px #CCC;
+}
+.buttonright{
+  width:374rpx;
+  text-align:center;
 }

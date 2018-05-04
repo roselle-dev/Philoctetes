@@ -1,6 +1,6 @@
 <!--pages/barrage/barrage.wxml-->
 <view class='container'>
-  <view class='textline' bindtap='setUp'>
+  <view class='textline' style='color:{{textColor}};font-size:{{textSize}}px;' bindtap='setUp'>
     点击文字设置您的弹幕
   </view>
   <view class='bottomMenu' style='bottom:{{menuBottom}}px;'>
@@ -22,7 +22,12 @@
       </view>
     </view>
     <view class='buttons'>
-      动起来~
+      <view class='buttonleft'>
+      开始
+      </view>
+      <view class='buttonright'>
+      退出
+      </view>
     </view>
   </view>
 </view>
