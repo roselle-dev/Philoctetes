@@ -22,3 +22,27 @@ page{
   background: #FFF;
   transition: all 1s ease-in-out;
 }
+.textInput{
+  border: solid 1px #EEE;
+  display: inline-block;
+  position:relative;
+  top:6px; 
+}
+.colorInput{
+  border: solid 1px #EEE;
+  display: inline-block;
+  position:relative;
+  top:6px; 
+}
+.formPd{
+  padding: 4px 0 5px 15px;
+}
+.sizeSlider{
+  display:inline-block;
+  width:80%;
+  position:relative;
+  top:-6px; 
+}
+.buttons{
+  border-top: solid 1px #CCC;
+}

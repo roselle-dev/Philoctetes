@@ -1,9 +1,28 @@
 <!--pages/barrage/barrage.wxml-->
 <view class='container'>
   <view class='textline' bindtap='setUp'>
-   点击文字设置您的弹幕
+    点击文字设置您的弹幕
   </view>
   <view class='bottomMenu' style='bottom:{{menuBottom}}px;'>
-  
+    <view class='formPd'>
+      文字内容:
+      <input class='textInput' type='text' bindinput='textIn' />
+    </view>
+    <view class='formPd'>
+      文字颜色:#
+      <input class='colorInput' type='text' bindinput='colorIn' maxlength='6' />
+    </view>
+    <view class='formPd'>
+      常用颜色：红的 白的 黄的
+    </view>
+    <view class='formPd' style='padding-bottom:0;'>
+      字号：
+      <view class='sizeSlider'>
+        <slider bindchange="sizeChange" min="1" max="50" show-value/>
+      </view>
+    </view>
+    <view class='buttons'>
+      动起来~
+    </view>
   </view>
 </view>
