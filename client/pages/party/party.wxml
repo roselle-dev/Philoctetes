@@ -9,5 +9,14 @@
       <view style='font-size:12px;color:#999;margin-top:5px;'>一个可以抽取给定范围内随机数的抽奖工具</view>
     </view>
   </view>
+    <view id="base" bindtap='toBarrage' class="oneItem" style='margin-top:10px;'>
+    <view class='logo'>
+      <image style="width: 80px; height: 80px;background:#FFF;" src="../../images/icons/dm.png"></image>
+    </view>
+    <view class='item_title'>
+      <view style='font-size:16px;'>弹幕功能</view>
+      <view style='font-size:12px;color:#999;margin-top:5px;'>一个简单的手持弹幕功能，为你的爱豆打电话~</view>
+    </view>
+  </view>
 
 </scroll-view>

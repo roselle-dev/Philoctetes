@@ -11,13 +11,13 @@
     "pages/party/party",
     "pages/sudoku/index",
     "pages/about/index",
-    "pages/cube/cube"
-    
+    "pages/cube/cube",
+    "pages/barrage/barrage"
   ],
   "tabBar": {
     "backgroundColor":"#000",
     "color": "#FFF",
-    "selectedColor": "#09BB07",
+    "selectedColor": "#AAA",
     "list": [
       {
         "pagePath": "pages/index/index",

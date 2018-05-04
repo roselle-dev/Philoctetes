@@ -1,28 +1,25 @@
-// pages/party/party.js
+// pages/barrage/barrage.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    toView: 'base',
-    scrollTop: 10
-  },
-  toBase: function () {
-    wx.navigateTo({
-      url: '../lottery/base'
-    })
-  },
-  toBarrage: function () {
-    wx.navigateTo({
-      url: '../barrage/barrage'
-    })
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
   
+  },
+
+  onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: ''
+    })
+    wx.setNavigationBarColor({
+      frontColor: '#000000',
+      backgroundColor: '#000000',
+      animation: {
+        duration: 400,
+        timingFunc: 'easeIn'
+      }
+    })
   },
 
   /**
