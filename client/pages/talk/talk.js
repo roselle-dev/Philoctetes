@@ -29,18 +29,15 @@ Page({
     inputValue: ""
   },
   getAnswer: function () {
-    var userinfo = null;
+    var userids = Math.random();
     var answer = "啊啊啊 你说什么呀？？？没听清呢";
-    app.getUserInfo(function (info) {
-      userinfo = info;
-    })
     //发接口获得回复
     wx.request({
       url: 'https://op.juhe.cn/robot/index',
       data: {
         key: Rkey,
         info: inputmsg,
-        userid: userinfo.nickName + userinfo.province
+        userid: userids
       },
       success: function (res) {
         console.log(res.data);
