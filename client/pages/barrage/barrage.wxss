@@ -9,7 +9,10 @@
 }
 .textline{
   transform: rotate(90deg);
-  color: #FFF
+  color: #FFF;
+  overflow: visible;
+  width: 5000px;
+  text-align: center;
 }
 page{
   height: 100%;
@@ -57,4 +60,11 @@ page{
 .buttonright{
   width:374rpx;
   text-align:center;
+}
+.colorchoose{
+  width:20px;
+  height:20px;
+  border-radius: 20px;
+  display:inline-block;
+  margin-left: 20px;
 }

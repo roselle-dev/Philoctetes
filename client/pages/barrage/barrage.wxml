@@ -1,7 +1,7 @@
 <!--pages/barrage/barrage.wxml-->
 <view class='container'>
-  <view class='textline' style='color:{{textColor}};font-size:{{textSize}}px;' bindtap='setUp'>
-    点击文字设置您的弹幕
+  <view bindtap='setUp' class='textline' style='color:{{textColor}};font-size:{{textSize}}px;position:absolute;bottom:{{bottom}}vh;'>
+    {{text}}
   </view>
   <view class='bottomMenu' style='bottom:{{menuBottom}}px;'>
     <view class='formPd'>
@@ -10,19 +10,24 @@
     </view>
     <view class='formPd'>
       文字颜色:#
-      <input class='colorInput' type='text' bindinput='colorIn' maxlength='6' />
+      <input class='colorInput' type='text' bindinput='colorIn' maxlength='6'/>
     </view>
     <view class='formPd'>
-      常用颜色：红的 白的 黄的
+      常用颜色：
+      <view class='colorchoose' style='background:#FF6666;' bindtap='colorOne'></view>
+      <view class='colorchoose' style='background:#FFFF66;' bindtap='colorTwo'></view>
+      <view class='colorchoose' style='background:#99CCFF;' bindtap='colorThree'></view>
+      <view class='colorchoose' style='background:#99CC33;' bindtap='colorFour'></view>
+      <view class='colorchoose' style='background:#FF33CC;' bindtap='colorFive'></view>
     </view>
     <view class='formPd' style='padding-bottom:0;'>
       字号：
       <view class='sizeSlider'>
-        <slider bindchange="sizeChange" min="1" max="50" show-value/>
+        <slider bindchange="sizeChange" min="10" max="80" value="24" show-value/>
       </view>
     </view>
     <view class='buttons'>
-      <view class='buttonleft'>
+      <view class='buttonleft' bindtap='start'>
       开始
       </view>
       <view class='buttonright'>
