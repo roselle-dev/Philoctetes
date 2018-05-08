@@ -8,7 +8,7 @@ Page({
     text: '点击文字设置您的弹幕',
     bottom: 50,
     limit: 100,
-    speed: 20
+    speed: 30
   },
 
   onLoad: function (options) {
