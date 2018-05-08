@@ -13,6 +13,9 @@
   overflow: visible;
   width: 5000px;
   text-align: center;
+  /* transition-property:font-size,color;
+  transition-duration:1s; */
+  transition: all 1s linear;
 }
 page{
   height: 100%;
@@ -20,7 +23,7 @@ page{
 }
 .bottomMenu{
   width: 100%;
-  height: 200px;
+  height: 214px;
   position: absolute;
   background: #FFF;
   transition: all 1s ease-in-out;
@@ -47,7 +50,6 @@ page{
   top:-6px; 
 }
 .buttons{
-  border-top: solid 1px #CCC;
   display: flex;
   align-items: flex-start;
   padding-top: 5px;

@@ -30,7 +30,7 @@
       <view class='buttonleft' bindtap='start'>
       开始
       </view>
-      <view class='buttonright'>
+      <view class='buttonright' bindtap='back'>
       退出
       </view>
     </view>
