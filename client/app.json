@@ -12,7 +12,8 @@
     "pages/sudoku/index",
     "pages/about/index",
     "pages/cube/cube",
-    "pages/barrage/barrage"
+    "pages/barrage/barrage",
+    "pages/allInfo/allInfo"
   ],
   "tabBar": {
     "backgroundColor":"#000",

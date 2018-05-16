@@ -6,17 +6,62 @@ var util = require('../../utils/util.js')
 var app = getApp()
 Page({
   data: {
+    times:0,
     motto: '解解闷',
     content: 'The greatest project you\'ll ever work on is you!',
     userInfo: {}
   },
   //事件处理函数
   bindViewTap: function () {
-    wx.showToast({
-      title: '萨瓦迪卡',
-      image: '../../images/icons/smile.png',
-      duration: 2000
-    });
+    try {
+      var value = wx.getStorageSync('newWorld')
+      if (value) {
+        util.showFace('欢迎回来', '14');
+        setTimeout(() => {
+          wx.redirectTo({
+            url: '../allInfo/allInfo'
+          })
+        }, 1000);
+        return;
+      }
+    } catch (e) {
+      util.showFace('遇到点问题', '18');
+    }
+    var that = this;
+    var times = this.data.times;
+    console.log("times:"+times);
+    if(times==0){
+        util.showFace('萨瓦迪卡','11');
+        that.setData({
+            times:++times
+        })
+    } else if (times == 1) {
+      util.showFace('别点啦', '19');
+      that.setData({
+        times: ++times
+      })
+    } else if (times == 2) {
+      util.showFace('求你别点啦', '18');
+      that.setData({
+        times: ++times
+      })
+    } else if (times == 3) {
+      util.showFace('你知道后果吗！', '17');
+      that.setData({
+        times: ++times
+      })
+    } else if (times > 3) {
+      util.showFace('打开新世界大门', '6');
+      wx.setStorage({
+        key: "newWorld",
+        data: true
+      })
+      setTimeout(()=>{
+        wx.redirectTo({
+          url: '../allInfo/allInfo'
+        })
+      },1000);
+    }
   },
   onShareAppMessage: function (res) {
     return {

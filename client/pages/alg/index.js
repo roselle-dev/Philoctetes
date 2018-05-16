@@ -1,3 +1,4 @@
+var util = require('../../utils/util.js');
 var gcol = 32;
 var grow = 32;
 var gmaze = {};
@@ -236,27 +237,15 @@ Page({
   setSize:function(event){
     var value = event.detail.value;
     if(isNaN(value)){
-      wx.showToast({
-        title: '请输入数字,OK?',
-        image: '../../images/icons/ym.png',
-        duration: 2000
-      });
+      util.showFace('请输入数字,OK?','15');
       return "";
     }else{
       var size = parseInt(value);
       if(size<=0){
-        wx.showToast({
-          title: '你想搞事情？！',
-          image: '../../images/icons/angry.png',
-          duration: 2000
-        });
+        util.showFace('你想搞事情?!', '17');
         return "";
       }else if(size>40){
-        wx.showToast({
-          title: '安全起见，不准那么大~',
-          image: '../../images/icons/smile.png',
-          duration: 2000
-        });
+        util.showFace('安全起见，不准', '11');
         return "";
       }else{
         gcol = size+2;

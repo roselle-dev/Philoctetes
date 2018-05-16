@@ -5,11 +5,13 @@ Page({
     vw: [100, 100, 100, 100, 100, 100, 100, 100],
     vh: [25, 25, 25, 25, 25, 25, 25, 25],
     flag: [false, false, false, false, false, false, false, false],
-    locAttr:{
+    bigTitle: {
+      Title: 78,
+      titleBorder: 3
+    },
+    locAttr: {
       locheight: 0,
-      locBorder: 0,
-      locTitle: 78,
-      titleBorder: 2
+      locBorder: 0
     },
     locationFlag: true,
     locInfo: {
@@ -42,11 +44,9 @@ Page({
     console.log(newVh);
     that.setData({
       vh: newVh,
-      flag:flags,
-      locAttr: {
-        locheight: 0,
-        locBorder: 0,
-        locTitle: 0,
+      flag: flags,
+      bigTitle: {
+        Title: 0,
         titleBorder: 0
       }
     })
@@ -70,9 +70,7 @@ Page({
           },
           locAttr: {
             locheight: locheight_F,
-            locBorder: 1,
-            locTitle: 0,
-            titleBorder: 0
+            locBorder: 1
           }
         })
       }
@@ -91,13 +89,15 @@ Page({
       flag: flags,
       locAttr: {
         locheight: 0,
-        locBorder: 0,
-        locTitle: 78,
-        titleBorder: 2
+        locBorder: 0
+      },
+      bigTitle: {
+        Title: 78,
+        titleBorder: 3
       }
     })
   },
-  showMap:function(){
+  showMap: function () {
     wx.getLocation({
       type: 'gcj02', //返回可以用于wx.openLocation的经纬度
       success: function (res) {
@@ -110,6 +110,12 @@ Page({
           scale: 28
         })
       }
+    })
+  },
+  toIndex: function () {
+    console.log("回到首页");
+    wx.switchTab({
+      url: '../index/index'
     })
   },
   onReady: function () {
