@@ -1,0 +1,95 @@
+/* pages/allInfo/allInfo.wxssf */
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.btnIn {
+  text-align: center;
+  border: solid 1px #fff;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.exit {
+  margin-top: 20px;
+  text-align: center;
+  border: solid 1px #fff;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.tablerow {
+  padding: 10px 20px;
+  text-align: left;
+  transition: all 1s ease-in-out;
+  height: 20px;
+}
+
+.locStyle {
+  color: #fff;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: all 1s ease-in-out;
+  overflow: hidden;
+}
+
+.bigTitle{
+  text-align: center;
+  color: #fff;
+  border-radius: 20px;
+  margin:5vh 5vw;
+  font-size: 24px;
+  overflow: hidden;
+  transition: all 1s ease-in-out
+}
+.titleText{
+  position: relative;
+  top: 20px;
+}
+
+.box1 {
+  background-image: linear-gradient(0deg, #fdeb71 10%, #f8d800 100%);
+  transition: all 1s ease-in-out;
+}
+
+.box2 {
+  background-image: linear-gradient(0deg, #abdcff 10%, #0396ff 100%);
+  transition: all 1s ease-in-out;
+}
+
+.box3 {
+  background-image: linear-gradient(0deg, #feb692 10%, #ea5455 100%);
+  transition: all 1s ease-in-out;
+}
+
+.box4 {
+  background-image: linear-gradient(0deg, #ce9ffc 10%, #7367f0 100%);
+  transition: all 1s ease-in-out;
+}
+
+.box5 {
+  background-image: linear-gradient(0deg, #90f7ec 10%, #32ccbc 100%);
+  transition: all 1s ease-in-out;
+}
+
+.box6 {
+  background-image: linear-gradient(0deg, #fff6b7 10%, #f6416c 100%);
+  transition: all 1s ease-in-out;
+}
+
+.box7 {
+  background-image: linear-gradient(0deg, #81fbb8 10%, #28c76f 100%);
+  transition: all 1s ease-in-out;
+}
+
+.box8 {
+  background-image: linear-gradient(0deg, #fccf31 10%, #f55555 100%);
+  transition: all 1s ease-in-out;
+}

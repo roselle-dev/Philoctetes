@@ -1,0 +1,47 @@
+<!--pages/allInfo/allInfo.wxml-->
+<view class='container'>
+  <view id='1' class='box1' bindtap='tap' bindlongpress='touch' style='min-width:{{vw[0]}}vw;height:{{vh[0]}}vh;'>
+    <view class='bigTitle' style='height:{{locAttr.locTitle}}px;border: solid {{locAttr.titleBorder}}px #FFF;'>
+      <text class='titleText'>位置</text>
+    </view>
+    <view wx:if="{{flag[0]}}" style='margin-top:10vh;padding:0 30px;'>
+      <view class='btnIn' catch:tap='getLoc'>
+      查看自己所在的经纬度
+      </view>
+      <view class='locStyle' style='height:{{locAttr.locheight}}px;border:solid {{locAttr.locBorder}}px #FFF;'>
+        <view class='tablerow'>
+          纬度，负数表示南纬:
+          <text style='float:right;'>{{locInfo.latitude}}</text>
+        </view>
+        <view class='tablerow'>
+          经度，负数表示西经:
+          <text style='float:right;'>{{locInfo.longitude}}</text>
+        </view>
+        <view class='tablerow'>
+          位置的精确度:
+          <text style='float:right;'>{{locInfo.accuracy}}米</text>
+        </view>
+      </view>
+      <view class='exit' catch:tap='showMap'>
+      在地图中显示
+      </view>
+      <view class='exit' catch:tap='backInit'>
+      退出
+      </view>
+    </view>
+  </view>
+  <view id='2' class='box2' bindtap='tap' bindlongpress='touch' style='min-width:{{vw[1]}}vw;height:{{vh[1]}}vh;'>
+  </view>
+  <view id='3' class='box3' bindtap='tap' bindlongpress='touch' style='min-width:{{vw[2]}}vw;height:{{vh[2]}}vh;'>
+  </view>
+  <view id='4' class='box4' bindtap='tap' bindlongpress='touch' style='min-width:{{vw[3]}}vw;height:{{vh[3]}}vh;'>
+  </view>
+  <view id='5' class='box5' bindtap='tap' bindlongpress='touch' style='min-width:{{vw[4]}}vw;height:{{vh[4]}}vh;'>
+  </view>
+  <view id='6' class='box6' bindtap='tap' bindlongpress='touch' style='min-width:{{vw[5]}}vw;height:{{vh[5]}}vh;'>
+  </view>
+  <view id='7' class='box7' bindtap='tap' bindlongpress='touch' style='min-width:{{vw[6]}}vw;height:{{vh[6]}}vh;'>
+  </view>
+  <view id='8' class='box8' bindtap='tap' bindlongpress='touch' style='min-width:{{vw[7]}}vw;height:{{vh[7]}}vh;'>
+  </view>
+</view>
