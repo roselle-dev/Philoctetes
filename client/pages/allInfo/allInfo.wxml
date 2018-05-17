@@ -10,11 +10,11 @@
       </view>
       <view class='locStyle' style='height:{{locAttr.locheight}}px;border:solid {{locAttr.locBorder}}px #FFF;'>
         <view class='tablerow'>
-          纬度，负数表示南纬:
+          纬度:
           <text style='float:right;'>{{locInfo.latitude}}</text>
         </view>
         <view class='tablerow'>
-          经度，负数表示西经:
+          经度:
           <text style='float:right;'>{{locInfo.longitude}}</text>
         </view>
         <view class='tablerow'>
