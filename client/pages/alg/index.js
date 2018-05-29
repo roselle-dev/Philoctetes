@@ -31,7 +31,7 @@ Page({
               wx.saveImageToPhotosAlbum({
                 filePath: res.tempFilePath,
                 success(res) {
-                  util.showFace('搞定','8');
+                  util.showFace('搞定', '8');
                 }
               })
             }
@@ -44,7 +44,7 @@ Page({
   },
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: 'Maze Path'
+      title: 'Maze'
     })
     var that = this;
     var maze = new Array();
@@ -138,7 +138,9 @@ Page({
   create: function () {
     var that = this;
     that.setData({
-      button: true //设置按钮不可以再按
+      button: true, //设置按钮不可以再按
+      width: (gcol - 2) * 10 + 4,
+      canvasH: (gcol - 2) * 10 + 4
     })
     var col = gcol;
     var row = grow;
