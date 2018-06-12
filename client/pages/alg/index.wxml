@@ -11,7 +11,7 @@
     <button bindtap="create" type="primary" disabled='{{button}}' style="width:90%;margin-top:5px;">生成迷宫</button>
     <button bindtap="answer" type="primary" disabled='{{button}}' style="width:90%;margin-top:5px;">生成路径</button>
     <view class="center" style="margin-top:10px;">
-    <canvas bindlongtap='saveToAlbum' class="maze" style="width:{{width}}px;height:{{canvasH}}px;" canvas-id="maze"></canvas>
+    <canvas bindlongpress='saveToAlbum' class="maze" style="width:{{width}}px;height:{{canvasH}}px;" canvas-id="maze"></canvas>
     </view>
 </view>
 

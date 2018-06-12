@@ -13,7 +13,8 @@
     "pages/about/index",
     "pages/cube/cube",
     "pages/barrage/barrage",
-    "pages/allInfo/allInfo"
+    "pages/allInfo/allInfo",
+    "pages/charts/charts"
   ],
   "tabBar": {
     "backgroundColor":"#000",

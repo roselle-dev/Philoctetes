@@ -173,6 +173,11 @@ Page({
       url: '../talk/talk'
     })
   },
+  makeCharts: function () {
+    wx.navigateTo({
+      url: '../charts/charts'
+    })
+  },
   magicCube: function () {
     wx.navigateTo({
       url: '../cube/cube'

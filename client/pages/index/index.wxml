@@ -10,7 +10,9 @@
     <text bindtap="opentest" class="content">{{content}}</text>
   </view>
   <view class="usermotto">
-    <button size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="buyTicket">{{motto}}</button>
+    <button bindtap="buyTicket">{{motto}}</button>
+  </view>
+    <view class="nextBtn">
+    <button bindtap="makeCharts">制作图表</button>
   </view>
 </view>
