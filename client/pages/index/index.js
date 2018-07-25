@@ -173,11 +173,11 @@ Page({
       url: '../talk/talk'
     })
   },
-  makeCharts: function () {
-    wx.navigateTo({
-      url: '../charts/charts'
-    })
-  },
+  // makeCharts: function () {
+  //   wx.navigateTo({
+  //     url: '../charts/charts'
+  //   })
+  // },
   magicCube: function () {
     wx.navigateTo({
       url: '../cube/cube'
@@ -199,5 +199,10 @@ Page({
     // wx.navigateTo({
     //   url: '../demo/index'
     // })
+  },
+  storeHouse:function(){
+    wx.navigateTo({
+      url: '../storeHouse/index'
+    })
   }
 })

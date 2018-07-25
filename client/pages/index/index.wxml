@@ -1,9 +1,9 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    
+  <view bindtap="bindViewTap" class="userinfo">
+
     <view class="userinfo-nickname">你好
-    <open-data type="userNickName"></open-data>
+      <open-data type="userNickName"></open-data>
     </view>
   </view>
   <view class="content center">
@@ -12,7 +12,10 @@
   <view class="usermotto">
     <button bindtap="buyTicket">{{motto}}</button>
   </view>
-    <view class="nextBtn">
+  <view class="nextBtn" wx:if="{{false}}">
     <button bindtap="makeCharts">制作图表</button>
+  </view>
+  <view class="nextBtn">
+    <button bindtap="storeHouse">我的小仓库</button>
   </view>
 </view>

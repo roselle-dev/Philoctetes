@@ -1,0 +1,11 @@
+/* pages/box/box.wxss */
+ec-canvas {
+  position: absolute;
+  top: 180px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.boxTitle{
+  text-align: center;
+}

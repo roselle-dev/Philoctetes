@@ -1,0 +1,10 @@
+/* pages/storeHouse/index.wxss */
+.oneItem{
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient( 180deg, #90F7EC 10%, #32CCBC 100%);
+}
+.bigSwiper{
+  width: 100vw;
+  height: 90vh;
+}

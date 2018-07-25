@@ -1,0 +1,10 @@
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='bigSwiper'>
+  <block wx:for="{{boxes}}">
+    <swiper-item>
+      <view class='oneItem'>
+        {{item}}
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
