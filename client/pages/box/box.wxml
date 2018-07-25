@@ -1,5 +1,5 @@
 <!--pages/box/box.wxml-->
 <view class='boxTitle'>
-  实时票房数据
+  
 </view>
 <ec-canvas wx:if="{{!isDisposed}}" id="box-pie" canvas-id="box-pie" ec="{{ ec }}"></ec-canvas>
