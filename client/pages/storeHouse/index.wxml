@@ -1,10 +1,15 @@
-<swiper indicator-dots="{{indicatorDots}}"
+<swiper indicator-dots="{{indicatorDots}}" indicator-color="rgba(255,255,255,0.3)" bindchange="indexChange"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='bigSwiper'>
   <block wx:for="{{boxes}}">
     <swiper-item>
-      <view class='oneItem'>
-        {{item}}
+      <view class='oneItem' style='background:url("../../images/pic/s{{index}}.jpg") no-repeat;background-size: cover;'>
       </view>
     </swiper-item>
   </block>
 </swiper>
+<view class='title'>
+  {{info.title}}
+</view>
+<view class='content'>
+{{info.content}}
+</view>
