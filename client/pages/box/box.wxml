@@ -1,5 +1,25 @@
 <!--pages/box/box.wxml-->
-<view class='boxTitle'>
-  
-</view>
+<view class="move-container">
 <ec-canvas wx:if="{{!isDisposed}}" id="box-pie" canvas-id="box-pie" ec="{{ ec }}"></ec-canvas>
+<view class='textCenter'>
+  --- 详细数据 ---
+</view>
+<view class='row2'>
+  <view class='tableItem1'>排名</view>
+  <view class='tableItem2'>电影名称</view>
+  <view class='tableItem3'>实时票房(万)</view>
+  <view class='tableItem3'>上映天数</view>
+</view>
+<view class='listItem' wx:for="{{boxInfo}}">
+<view class='row'>
+  <view class='tableItem1'>{{item.Irank}}</view>
+  <view class='tableItem2'>{{item.MovieName}}</view>
+  <view class='tableItem3'>{{item.BoxOffice}}</view>
+  <view class='tableItem3'>{{item.movieDay}}</view>
+</view>
+<view class='row2'>
+<view class='tableItem2'>总票房</view>
+<view class='tableItem4'>{{item.sumBoxOffice}}万元</view>
+</view>
+</view>
+</view>

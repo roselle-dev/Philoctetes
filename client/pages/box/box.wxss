@@ -1,11 +1,55 @@
 /* pages/box/box.wxss */
-ec-canvas {
-  position: absolute;
-  top: 50px;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.move-container {
+  width: 100%;
+  min-height: 500px;
 }
-.boxTitle{
+ec-canvas {
+  height: 80vh;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.boxTitle {
+  text-align: center;
+}
+
+.listItem {
+  margin-top: 2px;
+}
+.textCenter{
+  text-align: center;
+  padding-bottom: 10px;
+}
+.row{
+  display: flex;
+  margin: 0 2px;
+}
+.row2{
+  display: flex;
+  margin: 0 2px;
+  background: #EEE;
+}
+.tableItem1{
+  width: 15%;
+  display: block;
+  border:solid 1px #CCC;
+  text-align: center;
+}
+.tableItem2{
+  width: 35%;
+  display: block;
+  border:solid 1px #CCC;
+  text-align: center;
+}
+.tableItem3{
+  width: 25%;
+  display: block;
+  border:solid 1px #CCC;
+  text-align: center;
+}
+.tableItem4{
+  width: 65%;
+  display: block;
+  border:solid 1px #CCC;
   text-align: center;
 }
