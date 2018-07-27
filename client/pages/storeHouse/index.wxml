@@ -1,9 +1,7 @@
-<swiper indicator-dots="{{indicatorDots}}" indicator-color="rgba(255,255,255,0.3)" bindchange="indexChange"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='bigSwiper'>
+<swiper indicator-dots="{{indicatorDots}}" indicator-color="rgba(255,255,255,0.3)" bindchange="indexChange" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='bigSwiper'>
   <block wx:for="{{boxes}}">
     <swiper-item>
-      <view class='oneItem' style='background:url("../../images/pic/s{{index}}.jpg") no-repeat;background-size: cover;'>
-      </view>
+        <image class='oneItem' mode="scaleToFill" src="../../images/pic/s{{index}}.jpg"></image>
     </swiper-item>
   </block>
 </swiper>
@@ -11,5 +9,5 @@
   {{info.title}}
 </view>
 <view class='content'>
-{{info.content}}
+  {{info.content}}
 </view>

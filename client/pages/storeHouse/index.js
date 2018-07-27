@@ -29,7 +29,7 @@ Page({
     } else if (event.detail.current == 2){
       newInfo = {
         title: '12合1木盒玩具',
-        content: '    就像右下角画的那样，十二款游戏，包括国际象棋，跳跳棋，黑白棋，游戏棒等等，还有些不认识的....'
+        content: '    就像右下角画的那样，十二款游戏，包括国际象棋，黑白棋，游戏棒等等，还有些不认识的....'
       }
     } else if (event.detail.current == 3) {
       newInfo = {
