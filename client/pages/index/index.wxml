@@ -19,3 +19,10 @@
     <button bindtap="storeHouse">我的小仓库</button>
   </view>
 </view>
+<view class='curtain' style='top:{{curtainTop}}vh;'>
+  <image bindtap='closeTap' src='../../images/icons/close.png' mode='scaleToFill' class='certain-close' style='transform:rotate({{spin}}deg)'></image>
+</view>
+<view bindtap='labelTap' class='label' style='top: {{labelTop}}vh;'>
+<image src='../../images/pic/label.png' mode='scaleToFill' class='labelImg'></image>
+<text class='labelText'>转盘</text>
+</view>
