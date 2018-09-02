@@ -39,4 +39,23 @@ var showModel = (title, content) => {
     })
 }
 
-module.exports = { formatTime, showBusy, showSuccess, showModel }
+var showFace = (text,picName) =>{
+  wx.showToast({
+    title: text,
+    image: '../../images/toastIcon/'+picName+'.png',
+    duration: 2000
+  });
+}
+
+var getDB = ()=>{
+  const db = wx.cloud.database({
+    config: {
+      env: 'dev'
+    }
+  })
+  return db;
+}
+
+
+
+module.exports = { formatTime, showBusy, showSuccess, showModel, showFace, getDB }

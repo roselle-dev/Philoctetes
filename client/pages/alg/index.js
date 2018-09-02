@@ -1,18 +1,50 @@
-var gcol = 32;
-var grow = 32;
+var util = require('../../utils/util.js');
+var gcol = 12;
+var grow = 12;
 var gmaze = {};
 var gpath = {};
 var gsolvePath = new Array();
 
 Page({
   data: {
-    width: 50,
+    width: 300,
     height: 0,
-    hidden: true
+    hidden: true,
+    canvasH: 500,
+    button: false
+  },
+  saveToAlbum: function () {
+    wx.showModal({
+      title: '提示',
+      content: '是否保存迷宫到相册',
+      success: function (res) {
+        if (res.confirm) {
+          wx.canvasToTempFilePath({
+            x: 0,
+            y: 0,
+            width: (gcol - 2) * 10 + 4,
+            height: (grow - 2) * 10 + 4,
+            fileType: 'JPG',
+            canvasId: 'maze',
+            success: function (res) {
+              console.log(res.tempFilePath);
+              wx.saveImageToPhotosAlbum({
+                filePath: res.tempFilePath,
+                success(res) {
+                  util.showFace('搞定', '8');
+                }
+              })
+            }
+          })
+        } else if (res.cancel) {
+          util.showFace('那你瞎点啥', '15');
+        }
+      }
+    })
   },
   onLoad: function (options) {
-     wx.setNavigationBarTitle({
-      title: 'Maze Path'
+    wx.setNavigationBarTitle({
+      title: 'Maze'
     })
     var that = this;
     var maze = new Array();
@@ -20,9 +52,11 @@ Page({
     var row = grow;
     wx.getSystemInfo({
       success: function (res) {
+        console.log(res);
         that.setData({
-          width: res.windowWidth,
-          height: res.windowHeight
+          width: res.windowWidth - 40,
+          height: res.windowHeight,
+          canvasH: res.windowHeight - 220
         });
       }
     })
@@ -53,32 +87,33 @@ Page({
     maze[1][1].flag = 1;
     maze[col - 2][row - 2].right = 0;
     maze[col - 2][row - 2].flag = 0;
-    gmaze=maze;
+    gmaze = maze;
   },
   drawMaze: function () {
     var maze = gmaze;
+    var that = this;
     var context = wx.createContext();
     for (var i = 1; i < maze.length - 1; i++) {
       for (var j = 1; j < maze[i].length - 1; j++) {
         if (maze[i][j].draw == 0) {
           if (maze[i][j].left == 1) {
-            context.moveTo((i - 1) * 10, (j - 1) * 10);
-            context.lineTo((i - 1) * 10, (j - 1) * 10 + 10);
+            context.moveTo((i - 1) * 10 + 2, (j - 1) * 10 + 2);
+            context.lineTo((i - 1) * 10 + 2, (j - 1) * 10 + 10 + 2);
             context.stroke();
           }
           if (maze[i][j].right == 1) {
-            context.moveTo((i - 1) * 10 + 10, (j - 1) * 10);
-            context.lineTo((i - 1) * 10 + 10, (j - 1) * 10 + 10);
+            context.moveTo((i - 1) * 10 + 10 + 2, (j - 1) * 10 + 2);
+            context.lineTo((i - 1) * 10 + 10 + 2, (j - 1) * 10 + 10 + 2);
             context.stroke();
           }
           if (maze[i][j].top == 1) {
-            context.moveTo((i - 1) * 10, (j - 1) * 10);
-            context.lineTo((i - 1) * 10 + 10, (j - 1) * 10);
+            context.moveTo((i - 1) * 10 + 2, (j - 1) * 10 + 2);
+            context.lineTo((i - 1) * 10 + 10 + 2, (j - 1) * 10 + 2);
             context.stroke();
           }
           if (maze[i][j].bottom == 1) {
-            context.moveTo((i - 1) * 10, (j - 1) * 10 + 10);
-            context.lineTo((i - 1) * 10 + 10, (j - 1) * 10 + 10);
+            context.moveTo((i - 1) * 10 + 2, (j - 1) * 10 + 10 + 2);
+            context.lineTo((i - 1) * 10 + 10 + 2, (j - 1) * 10 + 10 + 2);
             context.stroke();
           }
           maze[i][j].draw = 1;
@@ -87,6 +122,11 @@ Page({
             actions: context.getActions(),
             reserve: true
           })
+          if (i == maze.length - 2 && j == maze[i].length - 2) {//画到最后一个
+            that.setData({
+              button: false
+            })
+          }
           return;
         }
       }
@@ -97,6 +137,11 @@ Page({
   },
   create: function () {
     var that = this;
+    that.setData({
+      button: true, //设置按钮不可以再按
+      width: (gcol - 2) * 10 + 4,
+      canvasH: (gcol - 2) * 10 + 4
+    })
     var col = gcol;
     var row = grow;
     var maze = new Array();
@@ -148,21 +193,19 @@ Page({
     this.dug(path, maze);
     const ctx = wx.createCanvasContext('maze')
     ctx.clearRect(0, 0, 1500, 750);
+    ctx.setFillStyle('white');
+    ctx.fillRect(0, 0, 1500, 750);
     ctx.draw();
-    gmaze=maze
+    gmaze = maze
   },
   //挖墙的核心方法
   dug: function (path, maze) {
-    console.log("dug!");
-    console.log(path);
     var that = this;
     var size = gcol;
     var random = Math.floor(Math.random() * 4);
     //next:当前节点
     var next = { x: path[path.length - 1].x, y: path[path.length - 1].y };
-    if (next.x == (size-2) && next.y == (size-2)) {
-      console.log("x:"+next.x+"-y:"+next.y+"-size:"+size);
-      console.log(path);
+    if (next.x == (size - 2) && next.y == (size - 2)) {
       gsolvePath = path.slice();
     }
     if (maze[next.x][next.y + 1].flag == 1 && maze[next.x][next.y - 1].flag == 1 && maze[next.x + 1][next.y].flag == 1 && maze[next.x - 1][next.y].flag == 1) {
@@ -217,7 +260,7 @@ Page({
     } else {
       var context = wx.createContext();
       for (var i = 0; i < solvePath.length; i++) {
-        context.rect((solvePath[i].x - 1) * 10 + 4, (solvePath[i].y - 1) * 10 + 4, 3, 3);
+        context.rect((solvePath[i].x - 1) * 10 + 5, (solvePath[i].y - 1) * 10 + 5, 3, 3);
         context.setFillStyle('red')
         context.fill();
       }
@@ -237,34 +280,22 @@ Page({
   onUnload: function () {
     // 页面关闭
   },
-  setSize:function(event){
+  setSize: function (event) {
     var value = event.detail.value;
-    if(isNaN(value)){
-      wx.showToast({
-        title: '请输入数字,OK?',
-        image: '../../images/icons/ym.png',
-        duration: 2000
-      });
+    if (isNaN(value)) {
+      util.showFace('请输入数字,OK?', '15');
       return "";
-    }else{
+    } else {
       var size = parseInt(value);
-      if(size<=0){
-        wx.showToast({
-          title: '你想搞事情？！',
-          image: '../../images/icons/angry.png',
-          duration: 2000
-        });
+      if (size <= 0) {
+        util.showFace('你想搞事情?!', '17');
         return "";
-      }else if(size>40){
-        wx.showToast({
-          title: '安全起见，不准那么大~',
-          image: '../../images/icons/smile.png',
-          duration: 2000
-        });
+      } else if (size > 40) {
+        util.showFace('安全起见，不准', '11');
         return "";
-      }else{
-        gcol = size+2;
-        grow = size+2;
+      } else {
+        gcol = size + 2;
+        grow = size + 2;
       }
     }
   }

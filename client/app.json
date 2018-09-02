@@ -10,12 +10,18 @@
     "pages/lottery/base",
     "pages/party/party",
     "pages/sudoku/index",
-    "pages/about/index"
-    
+    "pages/about/index",
+    "pages/cube/cube",
+    "pages/barrage/barrage",
+    "pages/allInfo/allInfo",
+    "pages/charts/charts",
+    "pages/storeHouse/index",
+    "pages/box/box"
   ],
   "tabBar": {
-    "color": "#000",
-    "selectedColor": "#09BB07",
+    "backgroundColor":"#000",
+    "color": "#FFF",
+    "selectedColor": "#AAA",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -45,8 +51,8 @@
   },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "Philoctetes",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   }
 }

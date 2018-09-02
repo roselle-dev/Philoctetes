@@ -13,6 +13,11 @@ Page({
       url: '../lottery/base'
     })
   },
+  toBarrage: function () {
+    wx.navigateTo({
+      url: '../barrage/barrage'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
