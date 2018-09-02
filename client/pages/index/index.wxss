@@ -79,3 +79,53 @@
   right: 20px;
   transition: all 0.2s ease-in-out;
 }
+
+.curtain-descprition {
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  margin: 0 30px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.roundel-container {
+  border: solid 1px #fff;
+  height: 250px;
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+}
+
+.roundel {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  /* border-radius: 50%; */
+  overflow: hidden;
+  margin: auto;
+  background-color: rgba(231, 247, 255, 0);
+}
+
+.roundel-bg {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.sectorPiece {
+    transform: translate(-50%, 0) rotate(3deg);
+    transform-origin: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 125px solid transparent;
+    border-left-width: 13.138029408209557813937797517485px;
+    border-right-width: 13.138029408209557813937797517485px;
+    border-top-color: #8AEBDC;
+}

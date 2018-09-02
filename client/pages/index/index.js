@@ -10,8 +10,8 @@ Page({
     motto: '解解闷',
     content: 'The greatest project you\'ll ever work on is you!',
     userInfo: {},
-    curtainTop: -100,
-    labelTop: -1,
+    curtainTop: 0,
+    labelTop: 100,
     spin:0,
   },
   //事件处理函数
@@ -84,7 +84,7 @@ Page({
     var that = this;
     var newspin = that.data.spin;
     that.setData({
-      spin: newspin+135,
+      spin: newspin+180,
     })
     that.labelTap();
   },
