@@ -6,6 +6,7 @@ var util = require('../../utils/util.js')
 var app = getApp()
 Page({
   data: {
+    triangles:[],
     times: 0,
     motto: '解解闷',
     content: 'The greatest project you\'ll ever work on is you!',
@@ -102,6 +103,17 @@ Page({
     }
   },
   onLoad: function() {
+    var that = this;
+    var newtriangles = new Array();
+    for(let i=0;i<60;i++){
+      newtriangles[i]={
+        rotate:i*6,
+        color: '#8AEBDC'
+      }
+    }
+    that.setData({
+      triangles: newtriangles
+    })
     wx.cloud.callFunction({
       name: 'demo',
       data: {
@@ -116,7 +128,6 @@ Page({
     wx.setNavigationBarTitle({
       title: '首页'
     })
-    var that = this
     // wx.request({
     //   url: config.service.host + "/weapp/everyday",
     //   success: function (result) {

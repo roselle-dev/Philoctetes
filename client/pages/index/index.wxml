@@ -24,25 +24,12 @@
   <view class='roundel-container'>
     <view class='roundel'>
       <view class='roundel-bg'>
-        <view class='sectorPiece'></view>
-        <view class='sectorPiece' style='transform: translate(-50%, 0) rotate(9deg);'></view>
-        <view class='sectorPiece' style='transform: translate(-50%, 0) rotate(9deg);'></view>
-        <view class='sectorPiece' style='transform: translate(-50%, 0) rotate(15deg);'></view>
-        <view class='sectorPiece' style='transform: translate(-50%, 0) rotate(21deg);'></view>
-        <view class='sectorPiece' style='transform: translate(-50%, 0) rotate(27deg);'></view>
-        <view class='sectorPiece' style='transform: translate(-50%, 0) rotate(33deg);'></view>
-        <view class='sectorPiece' style='transform: translate(-50%, 0) rotate(39deg);'></view>
-        <view class='sectorPiece' style='transform: translate(-50%, 0) rotate(45deg);'></view>
-        <view class='sectorPiece' style='transform: translate(-50%, 0) rotate(51deg);'></view>
-        <view class='sectorPiece' style='transform: translate(-50%, 0) rotate(57deg);'></view>
-        <view class='sectorPiece' style='transform: translate(-50%, 0) rotate(63deg);'></view>
-        <view class='sectorPiece' style='transform: translate(-50%, 0) rotate(69deg);'></view>
-        <view class='sectorPiece' style='transform: translate(-50%, 0) rotate(75deg);'></view>
-        <view class='sectorPiece' style='transform: translate(-50%, 0) rotate(81deg);'></view>
+      <view wx:for="{{triangles}}" class='sectorPiece' style="transform: translate(-50%, 0) rotate({{item.rotate}}deg);border-top-color:{{item.color}}">
+        </view>
       </view>
     </view>
   </view>
-  <view class='curtain-descprition'>很多时候 我和别人去一个广场 会不知道到底吃什么好 两个人都说着随便 却想不出吃哪家。最后我们经常挑出两个人都不排斥的几家 然后交给硬币来决定。于是 我做了这个 希望能帮到你~</view>
+  <view class='curtain-descprition'>有时候 我和她去一个广场 会不知道到底吃什么好 两个人都说着随便 却想不出吃哪家。最后我们经常挑出两个人都不排斥的几家 然后交给硬币来决定。于是 我做了这个 希望能帮到你~</view>
 </view>
 <view bindtap='labelTap' class='label' style='top: {{labelTop}}vh;'>
 <image src='../../images/pic/label.png' mode='scaleToFill' class='labelImg'></image>

@@ -128,4 +128,5 @@
     border-left-width: 13.138029408209557813937797517485px;
     border-right-width: 13.138029408209557813937797517485px;
     border-top-color: #8AEBDC;
+    transition: all 1s ease-in-out;
 }
