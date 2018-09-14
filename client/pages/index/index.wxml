@@ -29,7 +29,6 @@
       </view>
     </view>
   </view>
-  <view class='curtain-descprition'>有时候 我和她去一个广场 会不知道到底吃什么好 两个人都说着随便 却想不出吃哪家。最后我们经常挑出两个人都不排斥的几家 然后交给硬币来决定。于是 我做了这个 希望能帮到你~</view>
 </view>
 <view bindtap='labelTap' class='label' style='top: {{labelTop}}vh;'>
 <image src='../../images/pic/label.png' mode='scaleToFill' class='labelImg'></image>
