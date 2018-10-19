@@ -24,5 +24,7 @@
 
 
 #附上小程序码（肯定有老多bug，因为都没人帮我测😜）：
+
+
 ![小程序码](https://github.com/roselle-dev/Philoctetes/blob/master/client/images/pic/miniCode.png)
 
