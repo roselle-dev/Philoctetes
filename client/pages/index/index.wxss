@@ -17,12 +17,15 @@
 }
 
 .usermotto {
-  margin-top: 150px;
+  margin-top: 80px;
 }
 
 .content {
   margin-top: 20px;
   font-size: 12px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
 }
 
 .center {

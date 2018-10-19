@@ -22,6 +22,7 @@
   background: #000;
   color: #FFD700;
   border: solid 1px #FFF;
+  border-radius: 10px;
 }
 .row{
   display: flex;

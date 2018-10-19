@@ -1,23 +1,13 @@
-// pages/party/party.js
+// pages/cube/cube.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    toView: 'base',
-    scrollTop: 10
+  
   },
-  toBase: function () {
-    wx.navigateTo({
-      url: '../lottery/base'
-    })
-  },
-  toBarrage: function () {
-    wx.navigateTo({
-      url: '../barrage/barrage'
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

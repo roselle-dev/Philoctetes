@@ -33,5 +33,7 @@ router.get('/message', controllers.message.get)
 router.post('/message', controllers.message.post)
 // 学习helloworld
 router.get('/hello', controllers.hello)
+// 数据库查询每日一句
+router.get('/everyday', controllers.everyday)
 
 module.exports = router

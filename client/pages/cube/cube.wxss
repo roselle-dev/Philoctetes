@@ -1,0 +1,10 @@
+/* pages/cube/cube.wxss */
+view{
+  border: solid 1px red;
+}
+.tabs{
+  width: 198vw;
+  height: 99vh;
+  position: absolute;
+  left: 0vw;
+}

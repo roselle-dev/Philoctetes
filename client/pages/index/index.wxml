@@ -2,13 +2,15 @@
 <view class="container">
   <view  bindtap="bindViewTap" class="userinfo">
     
-    <text class="userinfo-nickname">你好 {{userInfo.nickName}}</text>
+    <view class="userinfo-nickname">你好
+    <open-data type="userNickName"></open-data>
+    </view>
   </view>
   <view class="content center">
     <text bindtap="opentest" class="content">{{content}}</text>
   </view>
   <view class="usermotto">
-    <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+    <button size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="buyTicket">{{motto}}</button>
   </view>
 </view>
