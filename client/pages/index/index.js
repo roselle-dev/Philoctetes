@@ -6,13 +6,16 @@ var util = require('../../utils/util.js')
 var app = getApp()
 Page({
   data: {
-    times:0,
+    times: 0,
     motto: '解解闷',
     content: 'The greatest project you\'ll ever work on is you!',
-    userInfo: {}
+    userInfo: {},
+    curtainTop: -100,
+    labelTop: -1,
+    spin:0,
   },
   //事件处理函数
-  bindViewTap: function () {
+  bindViewTap: function() {
     try {
       var value = wx.getStorageSync('newWorld')
       if (value) {
@@ -29,12 +32,12 @@ Page({
     }
     var that = this;
     var times = this.data.times;
-    console.log("times:"+times);
-    if(times==0){
-        util.showFace('萨瓦迪卡','11');
-        that.setData({
-            times:++times
-        })
+    console.log("times:" + times);
+    if (times == 0) {
+      util.showFace('萨瓦迪卡', '11');
+      that.setData({
+        times: ++times
+      })
     } else if (times == 1) {
       util.showFace('别点啦', '19');
       that.setData({
@@ -56,27 +59,60 @@ Page({
         key: "newWorld",
         data: true
       })
-      setTimeout(()=>{
+      setTimeout(() => {
         wx.redirectTo({
           url: '../allInfo/allInfo'
         })
-      },1000);
+      }, 1000);
     }
   },
-  onShareAppMessage: function (res) {
+  labelTap: function() {
+    let that = this;
+    let newCurtainTop = Math.abs(that.data.curtainTop) - 100;
+    let newlabelTop = 100;
+    if (that.data.labelTop == -1) {
+      newlabelTop = 100;
+    } else {
+      newlabelTop = -1
+    }
+    that.setData({
+      curtainTop: newCurtainTop,
+      labelTop: newlabelTop,
+    })
+  },
+  closeTap:function(){
+    var that = this;
+    var newspin = that.data.spin;
+    that.setData({
+      spin: newspin+135,
+    })
+    that.labelTap();
+  },
+  onShareAppMessage: function(res) {
     return {
       title: '一个有内涵的小程序',
       path: '/pages/index/index',
       imageUrl: '/images/pic/P.png',
-      success: function (res) {
+      success: function(res) {
         // 转发成功
       },
-      fail: function (res) {
+      fail: function(res) {
         // 转发失败
       }
     }
   },
-  onLoad: function () {
+  onLoad: function() {
+    wx.cloud.callFunction({
+      name: 'demo',
+      data: {
+        a: 1,
+        b: 2,
+      },
+      success: function(res) {
+        console.log(res.result) // 3
+      },
+      fail: console.error
+    })
     wx.setNavigationBarTitle({
       title: '首页'
     })
@@ -168,17 +204,22 @@ Page({
       content: contents[random]
     })
   },
-  buyTicket: function () {
+  buyTicket: function() {
     wx.navigateTo({
       url: '../talk/talk'
     })
   },
-  magicCube: function () {
+  // makeCharts: function () {
+  //   wx.navigateTo({
+  //     url: '../charts/charts'
+  //   })
+  // },
+  magicCube: function() {
     wx.navigateTo({
       url: '../cube/cube'
     })
   },
-  opentest: function () {
+  opentest: function() {
     // var that = this;
     // wx.request({
     //   url: config.service.host+"/weapp/everyday",
@@ -194,5 +235,10 @@ Page({
     // wx.navigateTo({
     //   url: '../demo/index'
     // })
+  },
+  storeHouse: function() {
+    wx.navigateTo({
+      url: '../storeHouse/index'
+    })
   }
 })

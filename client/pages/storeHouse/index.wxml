@@ -1,0 +1,13 @@
+<swiper indicator-dots="{{indicatorDots}}" indicator-color="rgba(255,255,255,0.3)" bindchange="indexChange" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='bigSwiper'>
+  <block wx:for="{{goods}}">
+    <swiper-item>
+        <image class='oneItem' mode="scaleToFill" src="{{fileList[index].tempFileURL}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='title'>
+  {{info.title}}
+</view>
+<view class='content'>
+  {{info.content}}
+</view>

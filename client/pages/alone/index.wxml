@@ -18,5 +18,14 @@
       <view style='font-size:12px;color:#999;margin-top:5px;'>一个能够快速解答数独的小工具 并且给出了20个案例</view>
     </view>
   </view>
+  <view id="box" bindtap='toBoxList' class="oneItem">
+    <view class='logo'>
+      <image style="width: 80px; height: 80px;background:#FFF;" src="../../images/icons/pf.png"></image>
+    </view>
+    <view class='item_title'>
+      <view style='font-size:16px;'>实时票房</view>
+      <view style='font-size:12px;color:#999;margin-top:5px;'>当日，总计票房数据，数据来自《神箭手云》</view>
+    </view>
+  </view>
 
 </scroll-view>

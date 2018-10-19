@@ -1,17 +1,17 @@
 {
 	"client": "./client",
-	"svr": "./server",
+	"cloudfunctionRoot": "./functions/",
 	"miniprogramRoot": "./client",
-	"qcloudRoot": "./server",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"nodeModules": true
 	},
 	"appid": "wx599902fbd17596e0",
 	"projectname": "P2",
-	"libVersion": "2.0.0",
+	"libVersion": "2.2.3",
 	"condition": {}
 }

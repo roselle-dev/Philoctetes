@@ -1,0 +1,5 @@
+<!--pages/charts/charts.wxml-->
+<view bindlongpress='saveToAlbum' style='text-align:center;'>制作图表</view>
+<view class="chartContainer">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>

@@ -47,4 +47,15 @@ var showFace = (text,picName) =>{
   });
 }
 
-module.exports = { formatTime, showBusy, showSuccess, showModel, showFace }
+var getDB = ()=>{
+  const db = wx.cloud.database({
+    config: {
+      env: 'dev'
+    }
+  })
+  return db;
+}
+
+
+
+module.exports = { formatTime, showBusy, showSuccess, showModel, showFace, getDB }
