@@ -2,20 +2,22 @@
 var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
 var util = require('../../utils/util.js')
+const colors = ['#FFD700', '#FFFF00', '#ADFF2F', '#008000', '#40E0D0', '#00BFFF', '#0000FF', '#9370DB', '#C71585','#800000', '#FF7F50', '#FFA500',];
 //获取应用实例
 var app = getApp()
 Page({
   data: {
-    triangles:[],
+    triangles: [],
     times: 0,
     motto: '解解闷',
     content: 'The greatest project you\'ll ever work on is you!',
     userInfo: {},
     curtainTop: 0,
     labelTop: 100,
-    spin:0,
+    spin: 0,
+    array: [1, 2, 3, 4, 5, 6, 10, 12],
+    index: 0,
   },
-  //事件处理函数
   bindViewTap: function() {
     try {
       var value = wx.getStorageSync('newWorld')
@@ -81,13 +83,31 @@ Page({
       labelTop: newlabelTop,
     })
   },
-  closeTap:function(){
+  closeTap: function() {
     var that = this;
     var newspin = that.data.spin;
     that.setData({
-      spin: newspin+180,
+      spin: newspin + 180,
     })
     that.labelTap();
+  },
+  bindPickerChange: function(e) {
+    console.log(e.detail.value);
+    var that = this;
+    let numarray = this.data.array;
+    let newtriangles = this.data.triangles;
+    //切的份数
+    let pieces = numarray[e.detail.value];
+    let count = 60 / pieces;
+    for (let i = 0; i < pieces; i++) {
+      for (let j = 0; j < count; j++) {
+        newtriangles[i * count + j].color = colors[i];
+      }
+    }
+    that.setData({
+      index: e.detail.value,
+      triangles: newtriangles,
+    })
   },
   onShareAppMessage: function(res) {
     return {
@@ -105,10 +125,18 @@ Page({
   onLoad: function() {
     var that = this;
     var newtriangles = new Array();
-    for(let i=0;i<60;i++){
-      newtriangles[i]={
-        rotate:i*6,
-        color: '#8AEBDC'
+    for (let i = 0; i < 60; i++) {
+      newtriangles[i] = {
+        id: i,
+        rotate: i * 6,
+        color: colors[0],
+      }
+      if (i == 59) {
+        newtriangles[i] = {
+          id: i,
+          rotate: i * 6 - 6,
+          color: colors[0],
+        }
       }
     }
     that.setData({
@@ -128,24 +156,6 @@ Page({
     wx.setNavigationBarTitle({
       title: '首页'
     })
-    // wx.request({
-    //   url: config.service.host + "/weapp/everyday",
-    //   success: function (result) {
-    //     var list = result.data.data;
-    //     console.log(list);
-    //     if (list.length > 0) {
-    //       var sentence = list[0].text;
-    //       that.setData({
-    //         content: sentence
-    //       })
-    //     }
-    //   },
-    //   fail: function (err) {
-    //     that.setData({
-    //       content: "Nothing seek,nothing find."
-    //     })
-    //   }
-    // })
     var contents = new Array();
     contents[0] = "Fading is true while flowering is past";
     contents[1] = "The greatest project you\'ll ever work on is you!";
@@ -211,6 +221,19 @@ Page({
     contents[61] = "其实根本没有真正高冷的人，只不过人家暖的不是你。";
     contents[62] = "别动不动就把问题交给时间来证明，时间懒得理你这个烂摊子。";
     var random = Math.floor(Math.random() * 63);
+    const db = util.getDB('dev-abd8fb');
+    db.collection('sentences').where({
+        flag: '1'
+      })
+      .get({
+        success: function(res) {
+          if (res.data.length > 0) {
+            that.setData({
+              content: res.data[0].text
+            })
+          }
+        }
+      })
     that.setData({
       content: contents[random]
     })
@@ -220,32 +243,13 @@ Page({
       url: '../talk/talk'
     })
   },
-  // makeCharts: function () {
-  //   wx.navigateTo({
-  //     url: '../charts/charts'
-  //   })
-  // },
   magicCube: function() {
     wx.navigateTo({
       url: '../cube/cube'
     })
   },
   opentest: function() {
-    // var that = this;
-    // wx.request({
-    //   url: config.service.host+"/weapp/everyday",
-    //   success:function(result){
-    //     console.log(result);
-    //   },
-    //   fail:function(err){
-    //     that.setData({
-    //       content: "Nothing seek,nothing find."
-    //     })
-    //   }
-    // })
-    // wx.navigateTo({
-    //   url: '../demo/index'
-    // })
+    console.log("点击首页文字！");
   },
   storeHouse: function() {
     wx.navigateTo({

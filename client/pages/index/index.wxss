@@ -71,7 +71,7 @@
   color: #069;
 }
 
-.certain-close {
+.curtain-close {
   width: 30px;
   height: 30px;
   position: absolute;
@@ -108,25 +108,41 @@
 }
 
 .roundel-bg {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: auto;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
 }
 
 .sectorPiece {
-    transform: translate(-50%, 0) rotate(3deg);
-    transform-origin: center;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border: 125px solid transparent;
-    border-left-width: 13.138029408209557813937797517485px;
-    border-right-width: 13.138029408209557813937797517485px;
-    border-top-color: #8AEBDC;
-    transition: all 1s ease-in-out;
+  transform: translate(-50%, 0) rotate(3deg);
+  transform-origin: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 125px solid transparent;
+  border-left-width: 13.138029408209557813937797517485px;
+  border-right-width: 13.138029408209557813937797517485px;
+  border-top-color: #8aebdc;
+  transition: all 1s ease-in-out;
+}
+
+.curtain-select {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+}
+
+.pointer {
+  width: 30px;
+  height:30px;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 105px;
+  left:110px;
 }

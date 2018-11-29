@@ -20,17 +20,24 @@
   </view>
 </view>
 <view class='curtain' style='top:{{curtainTop}}vh;'>
-  <image bindtap='closeTap' src='../../images/icons/close.png' mode='scaleToFill' class='certain-close' style='transform:rotate({{spin}}deg)'></image>
+  <image bindtap='closeTap' src='../../images/icons/close.png' mode='scaleToFill' class='curtain-close' style='transform:rotate({{spin}}deg)'></image>
+  <picker class="curtain-select" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view>
+      请点击选择选项数：{{array[index]}}
+    </view>
+  </picker>
   <view class='roundel-container'>
     <view class='roundel'>
       <view class='roundel-bg'>
-      <view wx:for="{{triangles}}" class='sectorPiece' style="transform: translate(-50%, 0) rotate({{item.rotate}}deg);border-top-color:{{item.color}}">
+        <view wx:for="{{triangles}}" class='sectorPiece' style="transform: translate(-50%, 0) rotate({{item.rotate}}deg);border-top-color:{{item.color}}">
         </view>
       </view>
-    </view>
+
+    <image bindtap='closeTap' src='../../images/pic/pointer.png' mode='scaleToFill' class='pointer'></image>
+      </view>
   </view>
 </view>
 <view bindtap='labelTap' class='label' style='top: {{labelTop}}vh;'>
-<image src='../../images/pic/label.png' mode='scaleToFill' class='labelImg'></image>
-<text class='labelText'>转盘</text>
+  <image src='../../images/pic/label.png' mode='scaleToFill' class='labelImg'></image>
+  <text class='labelText'>转盘</text>
 </view>

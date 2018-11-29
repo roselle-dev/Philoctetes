@@ -47,11 +47,10 @@ var showFace = (text,picName) =>{
   });
 }
 
-var getDB = ()=>{
+var getDB = (envconfig)=>{
+  console.log("get db from "+envconfig);
   const db = wx.cloud.database({
-    config: {
-      env: 'dev'
-    }
+    env: envconfig
   })
   return db;
 }
